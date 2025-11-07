@@ -1,11 +1,4 @@
-use alloy::{
-    primitives::{
-        U256, address,
-        utils::{Unit, format_ether, format_units},
-    },
-    providers::ProviderBuilder,
-    sol,
-};
+use alloy::sol;
 
 // Generate bindings for the WETH9 contract
 sol! {

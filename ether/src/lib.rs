@@ -11,7 +11,7 @@ pub enum EtherError {
     #[error("Invalid RPC URL provided: {0}")]
     UrlParse(#[from] url::ParseError),
 
-    #[error("Alloy contract error: {0}")]
+    #[error("Contract error: {0}")]
     AlloyContractError(#[from] alloy::contract::Error),
 
     #[error("Units error: {0}")]
