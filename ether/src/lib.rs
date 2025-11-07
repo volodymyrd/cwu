@@ -1,3 +1,7 @@
+//! # ether
+//!
+//! A Rust library for interacting with the Ethereum blockchain.
+
 pub mod usdt;
 pub(crate) mod weth9;
 
