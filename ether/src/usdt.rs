@@ -14,19 +14,20 @@ use alloy::{
 // USDT Contract Address on Ethereum Mainnet
 const USDT_ADDRESS: Address = address!("0xdAC17F958D2ee523a2206206994597C13D831ec7");
 
+type UsdtContract = WETH9Instance<
+    FillProvider<
+        JoinFill<
+            Identity,
+            JoinFill<GasFiller, JoinFill<BlobGasFiller, JoinFill<NonceFiller, ChainIdFiller>>>,
+        >,
+        RootProvider,
+    >,
+>;
 /// A struct for interacting with the USDT contract on Ethereum.
 #[derive(Debug)]
-struct Usdt {
+pub struct Usdt {
     /// The contract instance.
-    contract: WETH9Instance<
-        FillProvider<
-            JoinFill<
-                Identity,
-                JoinFill<GasFiller, JoinFill<BlobGasFiller, JoinFill<NonceFiller, ChainIdFiller>>>,
-            >,
-            RootProvider,
-        >,
-    >,
+    contract: UsdtContract,
 }
 
 impl Usdt {
