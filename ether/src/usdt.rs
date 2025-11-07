@@ -14,8 +14,10 @@ use alloy::{
 // USDT Contract Address on Ethereum Mainnet
 const USDT_ADDRESS: Address = address!("0xdAC17F958D2ee523a2206206994597C13D831ec7");
 
+/// A struct for interacting with the USDT contract on Ethereum.
 #[derive(Debug)]
 struct Usdt {
+    /// The contract instance.
     contract: WETH9Instance<
         FillProvider<
             JoinFill<
@@ -28,40 +30,98 @@ struct Usdt {
 }
 
 impl Usdt {
+    /// Creates a new `Usdt` instance with the default provider and contract address.
+    ///
+    /// # Returns
+    ///
+    /// A `Result` containing the new `Usdt` instance, or an error if the instance could not be created.
     pub fn new() -> Result<Self> {
         Self::with_url_and_address(PUBLIC_RPC_URL, USDT_ADDRESS)
     }
 
+    /// Creates a new `Usdt` instance with the specified provider URL and contract address.
+    ///
+    /// # Arguments
+    ///
+    /// * `url` - The URL of the Ethereum RPC provider.
+    /// * `address` - The address of the USDT contract.
+    ///
+    /// # Returns
+    ///
+    /// A `Result` containing the new `Usdt` instance, or an error if the instance could not be created.
     pub fn with_url_and_address(url: &str, address: Address) -> Result<Self> {
         let provider = ProviderBuilder::new().connect_http(url.parse()?);
         let contract = WETH9::new(address, provider.clone());
         Ok(Self { contract })
     }
 
+    /// Returns the name of the token.
+    ///
+    /// # Returns
+    ///
+    /// A `Result` containing the name of the token, or an error if the name could not be retrieved.
     pub async fn name(&self) -> Result<String> {
         let result = self.contract.name().call().await?;
         Ok(result)
     }
 
+    /// Returns the symbol of the token.
+    ///
+    /// # Returns
+    ///
+    /// A `Result` containing the symbol of the token, or an error if the symbol could not be retrieved.
     pub async fn symbol(&self) -> Result<String> {
         let result = self.contract.symbol().call().await?;
         Ok(result)
     }
 
+    /// Returns the number of decimals the token uses.
+    ///
+    /// # Returns
+    ///
+    /// A `Result` containing the number of decimals, or an error if the decimals could not be retrieved.
     pub async fn decimals(&self) -> Result<u8> {
         let result = self.contract.decimals().call().await?;
         Ok(result)
     }
 
+    /// Returns the balance of the specified wallet address.
+    ///
+    /// # Arguments
+    ///
+    /// * `wallet_address` - The address of the wallet to check the balance of.
+    ///
+    /// # Returns
+    ///
+    /// A `Result` containing the balance of the wallet, or an error if the balance could not be retrieved.
     pub async fn balance(&self, wallet_address: Address) -> Result<U256> {
         let result = self.contract.balanceOf(wallet_address).call().await?;
         Ok(result)
     }
 
+    /// Converts a balance in the smallest unit to a human-readable format, assuming 18 decimals (like Ether).
+    ///
+    /// # Arguments
+    ///
+    /// * `balance` - The balance to convert.
+    ///
+    /// # Returns
+    ///
+    /// The balance as a string, formatted to 18 decimal places.
     pub fn ether_balance(&self, balance: U256) -> String {
         format_ether(balance)
     }
 
+    /// Converts a balance in the smallest unit to a human-readable format, using the specified number of decimals.
+    ///
+    /// # Arguments
+    ///
+    /// * `balance` - The balance to convert.
+    /// * `decimals` - The number of decimals the token uses.
+    ///
+    /// # Returns
+    ///
+    /// A `Result` containing the balance as a string, or an error if the conversion fails.
     pub fn usdt_balance(&self, balance: U256, decimals: u8) -> Result<String> {
         Ok(format_units(balance, decimals)?)
     }
