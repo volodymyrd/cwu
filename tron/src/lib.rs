@@ -69,3 +69,50 @@ impl Tron {
         Ok(balance)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[tokio::test]
+    async fn test_new_tron_client() {
+        let tron = Tron::new().await;
+        assert!(tron.is_ok());
+    }
+
+    #[tokio::test]
+    async fn test_get_trx_balance_success() {
+        let tron = Tron::new().await.unwrap();
+        let balance = tron
+            .get_trx_balance("TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeL")
+            .await;
+        assert!(balance.is_ok());
+    }
+
+    #[tokio::test]
+    async fn test_get_trx_balance_fail() {
+        let tron = Tron::new().await.unwrap();
+        let balance = tron.get_trx_balance("invalid-address").await;
+        assert!(balance.is_err());
+        let error = balance.err().unwrap();
+        assert_eq!(error.to_string(), "Error: bad address");
+    }
+
+    #[tokio::test]
+    async fn test_get_usdt_balance_success() {
+        let tron = Tron::new().await.unwrap();
+        let balance = tron
+            .get_usdt_balance("TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeL")
+            .await;
+        assert!(balance.is_ok());
+    }
+
+    #[tokio::test]
+    async fn test_get_usdt_balance_fail() {
+        let tron = Tron::new().await.unwrap();
+        let balance = tron.get_usdt_balance("invalid-address").await;
+        assert!(balance.is_err());
+        let error = balance.err().unwrap();
+        assert_eq!(error.to_string(), "Error: bad address");
+    }
+}
