@@ -9,7 +9,9 @@ edition.workspace = true
 
 [dependencies]
 anyhow = { workspace = true }
+colored = { workspace = true }
 cwu-service = { workspace = true }
 dialoguer = { workspace = true }
 indicatif = { workspace = true }
+termimad = { workspace = true }
 tokio = { workspace = true, features = ["full"] }
