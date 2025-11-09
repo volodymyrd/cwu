@@ -1,5 +1,5 @@
 use crate::weth9::{WETH9, WETH9::WETH9Instance};
-use crate::{PUBLIC_RPC_URL, Result};
+use crate::{PUBLIC_RPC_URL, result::Result};
 use alloy::{
     primitives::{
         Address, U256, address,
@@ -10,6 +10,7 @@ use alloy::{
         fillers::{BlobGasFiller, ChainIdFiller, FillProvider, GasFiller, JoinFill, NonceFiller},
     },
 };
+use std::str::FromStr;
 
 // USDT Contract Address on Ethereum Mainnet
 const USDT_ADDRESS: Address = address!("0xdAC17F958D2ee523a2206206994597C13D831ec7");
@@ -95,7 +96,8 @@ impl Usdt {
     /// # Returns
     ///
     /// A `Result` containing the balance of the wallet, or an error if the balance could not be retrieved.
-    pub async fn balance(&self, wallet_address: Address) -> Result<U256> {
+    pub async fn balance(&self, wallet_address: &str) -> Result<U256> {
+        let wallet_address = Address::from_str(wallet_address)?;
         let result = self.contract.balanceOf(wallet_address).call().await?;
         Ok(result)
     }
@@ -166,7 +168,7 @@ mod test {
     #[tokio::test]
     async fn test_balance_success() {
         let usdt = Usdt::new().unwrap();
-        let wallet_address = address!("0x742d35Cc6634C0532925a3b844Bc454e4438f44e"); // Kraken exchange wallet
+        let wallet_address = "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"; // Kraken exchange wallet
         let balance = usdt.balance(wallet_address).await;
         assert!(balance.is_ok());
     }
@@ -192,7 +194,7 @@ mod test {
     #[tokio::test]
     async fn test_balance_of_zero_address_is_not_zero() {
         let usdt = Usdt::new().unwrap();
-        let wallet_address = address!("0x0000000000000000000000000000000000000000");
+        let wallet_address = "0x0000000000000000000000000000000000000000";
         let balance = usdt.balance(wallet_address).await;
         assert!(balance.is_ok());
         assert!(balance.unwrap() > U256::from(0));
@@ -260,7 +262,7 @@ mod test {
     #[tokio::test]
     async fn test_balance_fail_invalid_address() {
         let invalid_address = address!("0x0000000000000000000000000000000000000001");
-        let wallet_address = address!("0x742d35Cc6634C0532925a3b844Bc454e4438f44e");
+        let wallet_address = "0x742d35Cc6634C0532925a3b844Bc454e4438f44e";
         let usdt = Usdt::with_url_and_address(PUBLIC_RPC_URL, invalid_address).unwrap();
         let balance = usdt.balance(wallet_address).await;
         let err_msg = balance.unwrap_err().to_string();

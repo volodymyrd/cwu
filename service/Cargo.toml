@@ -1,0 +1,13 @@
+[package]
+name = "cwu-service"
+version.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+cwu-ether = { workspace = true }
+cwu-tron = { workspace = true }
+thiserror = { workspace = true }

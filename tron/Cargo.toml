@@ -1,0 +1,16 @@
+[package]
+name = "cwu-tron"
+version.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tronic = { workspace = true, features = ["tonic-tls"] }
+
+[dev-dependencies]
+tokio = { workspace = true }
