@@ -18,4 +18,12 @@ impl Balance {
     pub fn new(network: Network, usdt: String) -> Self {
         Self { network, usdt }
     }
+
+    pub fn network(&self) -> &Network {
+        &self.network
+    }
+
+    pub fn usdt(&self) -> &String {
+        &self.usdt
+    }
 }

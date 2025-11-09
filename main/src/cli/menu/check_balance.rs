@@ -1,5 +1,5 @@
 use crate::cli::service::ConsoleService;
-use crate::cli::styles::message::Message;
+use crate::cli::styles::{balance::StyledBalance, message::Message};
 use cwu_service::CwuServiceTrait;
 use dialoguer::{console::Term, theme::Theme};
 
@@ -12,7 +12,7 @@ impl CheckBalance {
             .interact_text_on(term)?;
         if address != "q" {
             match ConsoleService::new().check_balance(&address).await {
-                Ok(balance) => println!("{balance}"),
+                Ok(balance) => println!("{}", StyledBalance::new(&balance)),
                 Err(_) => Message::error("Address not found!"),
             };
         }
