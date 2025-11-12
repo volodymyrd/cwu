@@ -17,7 +17,7 @@ unsafe extern "C" {
 /// Allocates memory in the Wasm linear memory.
 /// Returns a pointer (i32) to the start of the new buffer.
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn allocate(size: i32) -> *mut u8 {
+pub extern "C" fn allocate(size: i32) -> *mut u8 {
     let mut vec = Vec::with_capacity(size as usize);
     let ptr = vec.as_mut_ptr();
     // Prevents Rust from deallocating the memory when `vec` goes out of scope.
@@ -27,7 +27,7 @@ pub unsafe extern "C" fn allocate(size: i32) -> *mut u8 {
 }
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn generate_mnemonic(word_count: i32, lang_ptr: i32, lang_len: i32) -> u64 {
+pub extern "C" fn generate_mnemonic(word_count: i32, lang_ptr: i32, lang_len: i32) -> u64 {
     let lang_ptr = lang_ptr as *const u8;
     // SAFETY: We trust the Host passed a valid pointer/length from a
     // previously allocated block. The Wasm sandbox prevents unauthorized
