@@ -1,4 +1,5 @@
 use bip39::Mnemonic;
+use std::fmt::Display;
 
 pub struct MasterSeed {
     mnemonic: Mnemonic,
@@ -9,9 +10,17 @@ impl MasterSeed {
         let mnemonic = Mnemonic::generate(12).expect("Failed to generate mnemonic");
         Self { mnemonic }
     }
+}
 
-    pub fn to_string(&self) -> String {
-        self.mnemonic.to_string()
+impl Default for MasterSeed {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
+impl Display for MasterSeed {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.mnemonic)
     }
 }
 

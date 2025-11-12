@@ -13,5 +13,6 @@ colored = { workspace = true }
 cwu-service = { workspace = true }
 dialoguer = { workspace = true }
 indicatif = { workspace = true }
+rand = { workspace = true }
 termimad = { workspace = true }
 tokio = { workspace = true, features = ["full"] }

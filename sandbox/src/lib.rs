@@ -1,6 +1,7 @@
-use bip39::Mnemonic;
+use bip39::{Language, Mnemonic};
 use std::mem;
 use std::slice;
+use std::str::FromStr;
 
 // We declare a function that MUST be provided by the Host (Wasmtime application).
 // This is the *only* way the Wasm module can get random bytes.
@@ -16,8 +17,8 @@ unsafe extern "C" {
 /// Allocates memory in the Wasm linear memory.
 /// Returns a pointer (i32) to the start of the new buffer.
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn allocate(size: usize) -> *mut u8 {
-    let mut vec = Vec::with_capacity(size);
+pub unsafe extern "C" fn allocate(size: i32) -> *mut u8 {
+    let mut vec = Vec::with_capacity(size as usize);
     let ptr = vec.as_mut_ptr();
     // Prevents Rust from deallocating the memory when `vec` goes out of scope.
     // The Host is now responsible for handling this memory.
@@ -26,14 +27,20 @@ pub unsafe extern "C" fn allocate(size: usize) -> *mut u8 {
 }
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn generate_mnemonic(ptr: *mut u8, len: usize) -> u64 {
+pub unsafe extern "C" fn generate_mnemonic(word_count: i32, lang_ptr: i32, lang_len: i32) -> u64 {
+    let lang_ptr = lang_ptr as *const u8;
     // SAFETY: We trust the Host passed a valid pointer/length from a
     // previously allocated block. The Wasm sandbox prevents unauthorized
     // access outside of the module's memory.
-    let input_slice = unsafe { slice::from_raw_parts(ptr, len) };
-    let input_string = String::from_utf8_lossy(input_slice);
+    let lang_slice = unsafe { slice::from_raw_parts(lang_ptr, lang_len as usize) };
+    let lang_str = String::from_utf8_lossy(lang_slice);
+    let language = lang_str.parse::<Lang>().unwrap_or(Lang {
+        lang: Language::English,
+    });
 
-    let mut entropy_buffer = [0u8; 32];
+    let entropy_bytes = (word_count / 3) * 4;
+
+    let mut entropy_buffer = vec![0u8; entropy_bytes as usize];
 
     // REQUEST RANDOMNESS FROM THE HOST
     // SAFETY: We trust the Host implements the `fill_random_bytes` function
@@ -43,7 +50,7 @@ pub unsafe extern "C" fn generate_mnemonic(ptr: *mut u8, len: usize) -> u64 {
     }
 
     // 3. Generate Mnemonic from the secure entropy bytes
-    let mnemonic = generate(&entropy_buffer);
+    let mnemonic = generate(&entropy_buffer, language.lang);
 
     let result_string = mnemonic.to_string();
 
@@ -59,8 +66,31 @@ pub unsafe extern "C" fn generate_mnemonic(ptr: *mut u8, len: usize) -> u64 {
     (ptr << 32) | len
 }
 
-fn generate(entropy_buffer: &[u8]) -> Mnemonic {
-    Mnemonic::from_entropy(entropy_buffer).expect("BIP39 generation failed unexpectedly")
+fn generate(entropy_buffer: &[u8], language: Language) -> Mnemonic {
+    Mnemonic::from_entropy_in(language, entropy_buffer)
+        .expect("BIP39 generation failed unexpectedly")
+}
+
+struct Lang {
+    lang: Language,
+}
+
+impl FromStr for Lang {
+    type Err = ();
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        if s.eq_ignore_ascii_case("en") || s.eq_ignore_ascii_case("english") {
+            return Ok(Lang {
+                lang: Language::English,
+            });
+        }
+        if s.eq_ignore_ascii_case("es") || s.eq_ignore_ascii_case("spanish") {
+            return Ok(Lang {
+                lang: Language::Spanish,
+            });
+        }
+        Err(())
+    }
 }
 
 #[cfg(test)]
@@ -96,7 +126,7 @@ mod tests {
             let mnemonic_str = vector.1;
             let seed = Vec::<u8>::from_hex(&vector.2).unwrap();
 
-            let mnemonic = generate(&entropy);
+            let mnemonic = generate(&entropy, Language::English);
 
             assert_eq!(
                 mnemonic,

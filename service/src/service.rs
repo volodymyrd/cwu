@@ -19,9 +19,9 @@ impl Default for CwuService {
 }
 
 impl CwuServiceTrait for CwuService {
-    async fn create_wallet(&self) -> Result<Wallet> {
+    async fn create_wallet(&self, word_count: i32, language: &str) -> Result<Wallet> {
         let mut host = Host::set_up()?;
-        Ok(host.create_wallet()?)
+        Ok(host.create_wallet(word_count, language)?)
     }
 
     async fn check_balance(&self, address: &str) -> Result<Balance> {

@@ -11,7 +11,7 @@ edition = "2024"
 crate-type = ["cdylib"]
 
 [dependencies]
-bip39 = "2"
+bip39 = { version = "2", features = ["all-languages"] }
 
 [dev-dependencies]
 bitcoin_hashes = "0.13.0"

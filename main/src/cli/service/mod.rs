@@ -13,9 +13,9 @@ impl ConsoleService {
     }
 }
 impl CwuServiceTrait for ConsoleService {
-    async fn create_wallet(&self) -> Result<Wallet> {
+    async fn create_wallet(&self, word_count: i32, language: &str) -> Result<Wallet> {
         let progress = Progress::with_spinner("Creating a new wallet...");
-        let wallet = self.internal.create_wallet().await;
+        let wallet = self.internal.create_wallet(word_count, language).await;
         progress.finish();
         wallet
     }

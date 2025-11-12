@@ -2,6 +2,7 @@ use crate::cli::menu::check_balance::CheckBalance;
 use crate::cli::menu::new_wallet::NewWallet;
 use dialoguer::console::Term;
 use dialoguer::theme::Theme;
+use rand::prelude::IndexedRandom;
 
 pub(crate) enum MainMenu {
     OpenWallet,
@@ -30,7 +31,7 @@ impl MainMenu {
             ];
 
             let action = dialoguer::Select::with_theme(theme)
-                .with_prompt("Pick an option")
+                .with_prompt("Pick an option (press 'q' to quit)")
                 .items(&actions)
                 .default(0)
                 .interact_opt()?;
@@ -38,7 +39,7 @@ impl MainMenu {
             let action = match action {
                 Some(v) => v,
                 None => {
-                    println!("\nExiting application (via Esc/q).");
+                    println!("{}", get_random_farewell());
                     break; // Exit the main menu loop.
                 }
             };
@@ -57,4 +58,22 @@ impl MainMenu {
         }
         Ok(())
     }
+}
+
+fn get_random_farewell() -> &'static str {
+    let farewells = [
+        "Bye",
+        "Adiós",
+        "Tschüss",
+        "Au revoir",
+        "Ciao",
+        "До побачення",
+        "さようなら",
+        "再见",
+    ];
+
+    // Create a thread-local random number generator
+    let mut rng = rand::rng();
+
+    farewells.choose(&mut rng).unwrap_or(&"До побачення")
 }

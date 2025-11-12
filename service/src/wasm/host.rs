@@ -9,7 +9,7 @@ pub struct Host {
     instance: WasmInstance,
 }
 
-const SANDBOX: &str = "target/wasm32-unknown-unknown/release/cwu_sandbox.wasm";
+const SANDBOX: &str = "sandbox/target/wasm32-unknown-unknown/release/cwu_sandbox.wasm";
 
 impl Host {
     pub(crate) fn set_up() -> Result<Self> {
@@ -39,22 +39,19 @@ impl Host {
         Ok(Self { instance })
     }
 
-    pub(crate) fn create_wallet(&mut self) -> Result<Wallet> {
-        let input_name = "<input>Secure Crypto Process<input>";
-
-        // 1. Prepare input: write the Host string into the Guest's isolated memory
+    pub(crate) fn create_wallet(&mut self, word_count: i32, language: &str) -> Result<Wallet> {
         let (input_ptr, input_len) = self
             .instance
-            .write_string(input_name)
+            .write_string(language)
             .context("Failed to write string to Wasm memory")?;
 
         // 2. Call the sandboxed function
         let generate_mnemonic_func = self
             .instance
-            .get_typed_func::<(i32, i32), u64>("generate_mnemonic")?;
+            .get_typed_func::<(i32, i32, i32), u64>("generate_mnemonic")?;
 
         let result_packed_u64 = generate_mnemonic_func
-            .call(&mut self.instance.store(), (input_ptr, input_len))
+            .call(self.instance.store(), (word_count, input_ptr, input_len))
             .context("Failed to call Wasm 'generate_mnemonic' function")?;
 
         // 3. Process result: read the output string from the Guest's memory
