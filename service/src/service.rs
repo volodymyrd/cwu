@@ -1,4 +1,6 @@
-use crate::{Balance, CwuServiceError, CwuServiceTrait, Network};
+use crate::wallet::Wallet;
+use crate::wasm::Host;
+use crate::{Balance, CwuServiceError, CwuServiceTrait, Network, Result};
 use cwu_ether::Usdt;
 use cwu_tron::Tron;
 
@@ -17,7 +19,12 @@ impl Default for CwuService {
 }
 
 impl CwuServiceTrait for CwuService {
-    async fn check_balance(&self, address: &str) -> crate::Result<Balance> {
+    async fn create_wallet(&self) -> Result<Wallet> {
+        let mut host = Host::set_up()?;
+        Ok(host.create_wallet()?)
+    }
+
+    async fn check_balance(&self, address: &str) -> Result<Balance> {
         for network in Network::iter() {
             return match network {
                 Network::Ethereum => {

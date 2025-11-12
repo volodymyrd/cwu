@@ -1,4 +1,5 @@
 use crate::cli::menu::check_balance::CheckBalance;
+use crate::cli::menu::new_wallet::NewWallet;
 use dialoguer::console::Term;
 use dialoguer::theme::Theme;
 
@@ -37,7 +38,6 @@ impl MainMenu {
             let action = match action {
                 Some(v) => v,
                 None => {
-                    // User pressed 'Esc' or 'q' on the main menu, treat as "Quit".
                     println!("\nExiting application (via Esc/q).");
                     break; // Exit the main menu loop.
                 }
@@ -48,7 +48,7 @@ impl MainMenu {
                     println!("Open wallet");
                 }
                 MainMenu::CreateWallet => {
-                    println!("Create wallet");
+                    NewWallet::apply(theme, term).await?;
                 }
                 MainMenu::CheckBalance => {
                     CheckBalance::apply(theme, term).await?;

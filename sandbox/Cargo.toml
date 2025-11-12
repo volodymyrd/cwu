@@ -1,0 +1,18 @@
+[package]
+name = "cwu-sandbox"
+version = "0.0.1"
+authors = ["Volodymyr Dotsenko <volodymyrdotsenko@gmail.com>"]
+repository = "https://github.com/volodymyrd/cwu"
+homepage = "https://github.com/volodymyrd/cwu"
+license = "Apache-2.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+bip39 = "2"
+
+[dev-dependencies]
+bitcoin_hashes = "0.13.0"
+
