@@ -1,3 +1,5 @@
+mod encrypt;
+
 use bip39::{Language, Mnemonic};
 use std::mem;
 use std::slice;

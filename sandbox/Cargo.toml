@@ -12,6 +12,10 @@ crate-type = ["cdylib"]
 
 [dependencies]
 bip39 = { version = "2", features = ["all-languages"] }
+aes-gcm = "0.10"
+rand = "0.8"
+base64 = "0.21"
+argon2 = { version = "0.5", features = ["std"] }
 
 [dev-dependencies]
 bitcoin_hashes = "0.13.0"
