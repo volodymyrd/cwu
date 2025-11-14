@@ -1,6 +1,6 @@
-use crate::wallet::Wallet;
 use crate::wasm::{Result, instance::WasmInstance};
 use anyhow::Context;
+use cwu_wallet::Wallet;
 use rand::RngCore;
 use std::fs;
 use wasmtime::{Caller, Engine, Linker, Module, Store};

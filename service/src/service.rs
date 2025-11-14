@@ -1,8 +1,9 @@
-use crate::wallet::Wallet;
 use crate::wasm::Host;
-use crate::{Balance, CwuServiceError, CwuServiceTrait, Network, Result};
+use crate::{CwuServiceError, CwuServiceTrait, Result};
 use cwu_ether::Usdt;
+use cwu_model::{Balance, Network};
 use cwu_tron::Tron;
+use cwu_wallet::Wallet;
 
 pub struct CwuService {}
 

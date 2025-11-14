@@ -1,5 +1,7 @@
 use crate::cli::styles::progress::Progress;
-use cwu_service::{Balance, CwuService, CwuServiceTrait, Result, Wallet};
+use cwu_model::Balance;
+use cwu_service::{CwuService, CwuServiceTrait, Result};
+use cwu_wallet::Wallet;
 
 pub(crate) struct ConsoleService {
     internal: CwuService,

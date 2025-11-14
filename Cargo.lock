@@ -1802,7 +1802,9 @@ version = "0.0.1"
 dependencies = [
  "anyhow",
  "colored",
+ "cwu-model",
  "cwu-service",
+ "cwu-wallet",
  "dialoguer",
  "indicatif",
  "rand 0.9.2",
@@ -1818,12 +1820,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "cwu-model"
+version = "0.0.1"
+
+[[package]]
 name = "cwu-service"
 version = "0.0.1"
 dependencies = [
  "anyhow",
  "cwu-ether",
+ "cwu-model",
  "cwu-tron",
+ "cwu-wallet",
  "rand 0.9.2",
  "thiserror 2.0.17",
  "url",
@@ -1838,6 +1846,13 @@ dependencies = [
  "thiserror 2.0.17",
  "tokio",
  "tronic",
+]
+
+[[package]]
+name = "cwu-wallet"
+version = "0.0.1"
+dependencies = [
+ "bip39",
 ]
 
 [[package]]

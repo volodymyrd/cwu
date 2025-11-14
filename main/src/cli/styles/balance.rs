@@ -1,7 +1,7 @@
-use cwu_service::Balance;
 use std::fmt::{Display, Formatter};
 use termimad::MadSkin;
 use termimad::crossterm::style::Stylize;
+use cwu_model::Balance;
 
 pub struct StyledBalance<'a> {
     balance: &'a Balance,

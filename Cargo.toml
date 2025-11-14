@@ -1,5 +1,5 @@
 [workspace]
-members = ["ether", "main", "mnemonic", "service", "tron"]
+members = ["ether", "main", "mnemonic", "model", "service", "tron", "wallet"]
 exclude = ["sandbox"]
 
 resolver = "2"
@@ -20,6 +20,8 @@ clap = "4"
 colored = "2"
 cwu-ether = { version = "0.0.1", path = "ether" }
 cwu-mnemonic = { version = "0.0.1", path = "mnemonic" }
+cwu-model = { version = "0.0.1", path = "model" }
+cwu-wallet = { version = "0.0.1", path = "wallet" }
 cwu-service = { version = "0.0.1", path = "service" }
 cwu-tron = { version = "0.0.1", path = "tron" }
 dialoguer = "0"

@@ -1,7 +1,6 @@
 pub struct Wallet {
     mnemonic: String,
 }
-
 impl Wallet {
     pub fn new(mnemonic: String) -> Self {
         Self { mnemonic }

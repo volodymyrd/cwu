@@ -1,4 +1,4 @@
-use crate::Network;
+use crate::network::Network;
 use std::fmt::{Display, Formatter};
 
 #[derive(Debug)]
