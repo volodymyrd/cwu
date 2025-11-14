@@ -1,0 +1,17 @@
+[package]
+name = "cwu-encryption-utils"
+version.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+aes-gcm = { workspace = true }
+anyhow = { workspace = true }
+argon2 = { workspace = true, features = ["std"] }
+base64 = { workspace = true }
+rand = { workspace = true }
+rand_core = { workspace = true }
+thiserror = { workspace = true }
