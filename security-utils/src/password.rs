@@ -28,28 +28,26 @@ pub fn generate_secure_password(length: usize) -> Result<String, PasswordError> 
         return Err(PasswordError::TooShort);
     }
 
-    let mut required_chars: Vec<u8> = Vec::new();
-
     let mut rng = rng();
-    required_chars.push(*CHARS_LOWERCASE.choose(&mut rng).unwrap());
-    required_chars.push(*CHARS_UPPERCASE.choose(&mut rng).unwrap());
-    required_chars.push(*CHARS_NUMBERS.choose(&mut rng).unwrap());
-    required_chars.push(*CHARS_SYMBOLS.choose(&mut rng).unwrap());
+    let mut password_bytes = Vec::with_capacity(length);
 
-    let mut password_bytes: Vec<u8> = Vec::with_capacity(length);
-    let remaining_length = length.saturating_sub(required_chars.len());
+    // Start with one of each required character type.
+    // Unwraps are safe as character sets are not empty.
+    password_bytes.push(*CHARS_LOWERCASE.choose(&mut rng).unwrap());
+    password_bytes.push(*CHARS_UPPERCASE.choose(&mut rng).unwrap());
+    password_bytes.push(*CHARS_NUMBERS.choose(&mut rng).unwrap());
+    password_bytes.push(*CHARS_SYMBOLS.choose(&mut rng).unwrap());
 
-    for _ in 0..remaining_length {
-        let char_byte = ALL_CHARACTERS.choose(&mut rng).unwrap();
-        password_bytes.push(*char_byte);
+    // Fill the remaining length with random characters from all sets.
+    let remaining = length - password_bytes.len();
+    for _ in 0..remaining {
+        password_bytes.push(*ALL_CHARACTERS.choose(&mut rng).unwrap());
     }
 
-    password_bytes.extend_from_slice(&required_chars);
+    // Shuffle the collected bytes to randomize character positions.
     password_bytes.shuffle(&mut rng);
 
-    password_bytes.truncate(length);
-
-    // Safety: Since we only use known ASCII character sets, conversion is safe.
+    // The `from_utf8` call is safe because all source characters are valid ASCII.
     Ok(String::from_utf8(password_bytes)
         .expect("Password generation should result in valid UTF-8 ASCII"))
 }
