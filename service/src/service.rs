@@ -1,3 +1,4 @@
+#[cfg(feature = "wasm")]
 use crate::wasm::Host;
 use crate::{CwuServiceError, CwuServiceTrait, Result};
 use cwu_ether::Usdt;
@@ -21,8 +22,16 @@ impl Default for CwuService {
 
 impl CwuServiceTrait for CwuService {
     async fn create_wallet(&self, word_count: i32, language: &str) -> Result<Wallet> {
-        let mut host = Host::set_up()?;
-        Ok(host.create_wallet(word_count, language)?)
+        #[cfg(feature = "wasm")]
+        {
+            let mut host = Host::set_up()?;
+            Ok(host.create_wallet(word_count, language)?)
+        }
+        #[cfg(not(feature = "wasm"))]
+        {
+            let wallet = Wallet::create_with(word_count, language)?;
+            Ok(wallet)
+        }
     }
 
     async fn check_balance(&self, address: &str) -> Result<Balance> {

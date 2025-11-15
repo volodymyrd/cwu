@@ -7,11 +7,15 @@ homepage.workspace = true
 license.workspace = true
 edition.workspace = true
 
+[features]
+default = []
+wasm = ["cwu-service/wasm"]
+
 [dependencies]
 anyhow = { workspace = true }
 colored = { workspace = true }
-cwu-service = { workspace = true }
 cwu-model = { workspace = true }
+cwu-service = { workspace = true }
 cwu-wallet = { workspace = true }
 dialoguer = { workspace = true }
 indicatif = { workspace = true }

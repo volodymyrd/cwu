@@ -60,7 +60,7 @@ impl Host {
             .read_string(result_packed_u64)
             .context("Failed to read result string from Wasm memory")?;
 
-        Ok(Wallet::new(output_string))
+        Ok(Wallet::create())
     }
 }
 

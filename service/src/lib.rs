@@ -1,5 +1,6 @@
 mod result;
 mod service;
+#[cfg(feature = "wasm")]
 mod wasm;
 
 use cwu_model::Balance;

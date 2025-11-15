@@ -8,13 +8,14 @@ use argon2::{
 };
 use base64::{DecodeError, prelude::*};
 use rand::{RngCore, rng};
+use serde::{Deserialize, Serialize};
 use std::{convert::Infallible, string::FromUtf8Error};
 
 const KEY_SIZE: usize = 32; // 256 bits for AES-256
 const NONCE_SIZE: usize = 12;
 
 /// A struct to hold the encrypted data and associated metadata.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct EncryptedPayload {
     pub ciphertext_b64: String,
     pub salt_phc: String,

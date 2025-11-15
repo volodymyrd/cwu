@@ -7,13 +7,17 @@ homepage.workspace = true
 license.workspace = true
 edition.workspace = true
 
+[features]
+default = []
+wasm = ["wasmtime"]
+
 [dependencies]
 anyhow = { workspace = true }
 cwu-ether = { workspace = true }
+cwu-model = { workspace = true }
 cwu-tron = { workspace = true }
+cwu-wallet = { workspace = true }
 rand = { workspace = true }
 thiserror = { workspace = true }
 url = "2.5.7"
-wasmtime = { workspace = true }
-cwu-model = { workspace = true }
-cwu-wallet = { workspace = true }
+wasmtime = { workspace = true, optional = true }

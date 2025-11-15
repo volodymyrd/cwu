@@ -8,4 +8,8 @@ license.workspace = true
 edition.workspace = true
 
 [dependencies]
-bip39 = { version = "2", features = ["all-languages"] }
+bip39 = { version = "2", features = ["all-languages", "rand"] }
+cwu-security-utils = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }

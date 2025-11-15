@@ -1,12 +1,6 @@
-pub struct Wallet {
-    mnemonic: String,
-}
-impl Wallet {
-    pub fn new(mnemonic: String) -> Self {
-        Self { mnemonic }
-    }
+mod language;
+mod result;
+mod wallet;
 
-    pub fn mnemonic(&self) -> &String {
-        &self.mnemonic
-    }
-}
+pub use result::{Result, WalletError};
+pub use wallet::Wallet;

@@ -1,3 +1,4 @@
 .idea
 /target
 sandbox/target
+*.cwu.json

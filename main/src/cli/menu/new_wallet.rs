@@ -19,7 +19,7 @@ impl NewWallet {
             .create_wallet(i32::from(word_count.unwrap()), &lang.unwrap().to_string())
             .await?;
 
-        println!("{}", wallet.mnemonic());
+        println!("{}", wallet);
 
         Ok(())
     }
