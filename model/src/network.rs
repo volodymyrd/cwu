@@ -1,7 +1,8 @@
+use serde::{Deserialize, Serialize};
 use std::fmt::{Display, Formatter};
 use std::slice::Iter;
 
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum Network {
     Ethereum,
     Tron,

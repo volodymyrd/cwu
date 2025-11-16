@@ -15,11 +15,11 @@ impl NewWallet {
         if word_count.is_none() {
             return Ok(());
         }
-        let wallet = ConsoleService::new()
+        let master_password = ConsoleService::new()
             .create_wallet(i32::from(word_count.unwrap()), &lang.unwrap().to_string())
             .await?;
 
-        println!("{}", wallet);
+        println!("Master Password: {master_password}");
 
         Ok(())
     }

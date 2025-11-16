@@ -1,5 +1,6 @@
 use crate::language::InvalidLanguage;
 use cwu_security_utils::{EncryptionError, PasswordError};
+use k256::elliptic_curve;
 
 #[derive(thiserror::Error, Debug)]
 pub enum WalletError {
@@ -20,6 +21,9 @@ pub enum WalletError {
 
     #[error("{0}")]
     PasswordError(#[from] PasswordError),
+
+    #[error("{0}")]
+    EllipticCurveError(#[from] elliptic_curve::Error),
 }
 
 pub type Result<T> = std::result::Result<T, WalletError>;

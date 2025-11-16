@@ -1,7 +1,6 @@
 use crate::cli::styles::progress::Progress;
 use cwu_model::Balance;
 use cwu_service::{CwuService, CwuServiceTrait, Result};
-use cwu_wallet::Wallet;
 
 pub(crate) struct ConsoleService {
     internal: CwuService,
@@ -15,11 +14,11 @@ impl ConsoleService {
     }
 }
 impl CwuServiceTrait for ConsoleService {
-    async fn create_wallet(&self, word_count: i32, language: &str) -> Result<Wallet> {
+    async fn create_wallet(&self, word_count: i32, language: &str) -> Result<String> {
         let progress = Progress::with_spinner("Creating a new wallet...");
-        let wallet = self.internal.create_wallet(word_count, language).await;
+        let master_password = self.internal.create_wallet(word_count, language).await;
         progress.finish();
-        wallet
+        master_password
     }
 
     async fn check_balance(&self, address: &str) -> Result<Balance> {

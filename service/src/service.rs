@@ -4,7 +4,7 @@ use crate::{CwuServiceError, CwuServiceTrait, Result};
 use cwu_ether::Usdt;
 use cwu_model::{Balance, Network};
 use cwu_tron::Tron;
-use cwu_wallet::Wallet;
+use cwu_wallet::EncryptedWalletV1;
 
 pub struct CwuService {}
 
@@ -21,7 +21,7 @@ impl Default for CwuService {
 }
 
 impl CwuServiceTrait for CwuService {
-    async fn create_wallet(&self, word_count: i32, language: &str) -> Result<Wallet> {
+    async fn create_wallet(&self, word_count: i32, language: &str) -> Result<String> {
         #[cfg(feature = "wasm")]
         {
             let mut host = Host::set_up()?;
@@ -29,8 +29,7 @@ impl CwuServiceTrait for CwuService {
         }
         #[cfg(not(feature = "wasm"))]
         {
-            let wallet = Wallet::create_with(word_count, language)?;
-            Ok(wallet)
+            Ok(EncryptedWalletV1::create(word_count, language)?)
         }
     }
 
