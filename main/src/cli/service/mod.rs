@@ -14,9 +14,14 @@ impl ConsoleService {
     }
 }
 impl CwuServiceTrait for ConsoleService {
-    async fn create_wallet(&self, word_count: i32, language: &str) -> Result<String> {
+    async fn create_wallet(
+        &self,
+        word_count: i32,
+        language: &str,
+        wallet_name: &str,
+    ) -> Result<String> {
         let progress = Progress::with_spinner("Creating a new wallet...");
-        let master_password = self.internal.create_wallet(word_count, language).await;
+        let master_password = self.internal.create_wallet(word_count, language, wallet_name).await;
         progress.finish();
         master_password
     }

@@ -13,6 +13,7 @@ pub trait CwuServiceTrait {
         &self,
         word_count: i32,
         language: &str,
+        wallet_name: &str,
     ) -> impl Future<Output = Result<String>> + Send;
 
     fn check_balance(&self, address: &str) -> impl Future<Output = Result<Balance>> + Send;

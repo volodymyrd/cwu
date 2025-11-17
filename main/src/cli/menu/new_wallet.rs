@@ -1,7 +1,9 @@
 use crate::cli::service::ConsoleService;
+use colored::Colorize;
 use cwu_service::CwuServiceTrait;
 use dialoguer::console::Term;
 use dialoguer::theme::Theme;
+use termimad::MadSkin;
 
 pub(super) struct NewWallet {}
 
@@ -15,12 +17,26 @@ impl NewWallet {
         if word_count.is_none() {
             return Ok(());
         }
+        let wallet_name: String = dialoguer::Input::with_theme(theme)
+            .with_prompt("Come up with a wallet name or 'q' to quit")
+            .interact_text_on(term)?;
+        if wallet_name.is_empty() || wallet_name == "q" {
+            return Ok(());
+        }
         let master_password = ConsoleService::new()
-            .create_wallet(i32::from(word_count.unwrap()), &lang.unwrap().to_string())
+            .create_wallet(
+                i32::from(word_count.unwrap()),
+                &lang.unwrap().to_string(),
+                wallet_name.as_str(),
+            )
             .await?;
 
-        println!("Master Password: {master_password}");
-
+        let skin = MadSkin::default();
+        let styled_message = format!(
+            "**Master Password (between < >):** <**{}**>",
+            master_password.red()
+        );
+        println!("{}", skin.inline(&styled_message));
         Ok(())
     }
 }

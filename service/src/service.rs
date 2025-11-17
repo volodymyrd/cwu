@@ -21,7 +21,12 @@ impl Default for CwuService {
 }
 
 impl CwuServiceTrait for CwuService {
-    async fn create_wallet(&self, word_count: i32, language: &str) -> Result<String> {
+    async fn create_wallet(
+        &self,
+        word_count: i32,
+        language: &str,
+        wallet_name: &str,
+    ) -> Result<String> {
         #[cfg(feature = "wasm")]
         {
             let mut host = Host::set_up()?;
@@ -29,7 +34,11 @@ impl CwuServiceTrait for CwuService {
         }
         #[cfg(not(feature = "wasm"))]
         {
-            Ok(EncryptedWalletV1::create(word_count, language)?)
+            Ok(EncryptedWalletV1::create(
+                word_count,
+                language,
+                wallet_name,
+            )?)
         }
     }
 

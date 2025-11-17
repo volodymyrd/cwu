@@ -15,8 +15,8 @@ pub struct EncryptedWalletV1 {
 }
 
 impl EncryptedWalletV1 {
-    pub fn create(word_count: i32, language: &str) -> Result<String> {
-        InternalWallet::create(word_count, language)
+    pub fn create(word_count: i32, language: &str, wallet_name: &str) -> Result<String> {
+        InternalWallet::create(word_count, language, wallet_name)
     }
 
     pub(crate) fn new(
@@ -48,13 +48,14 @@ struct InternalWallet {}
 const PASSWORD_LENGTH: usize = 8;
 
 impl InternalWallet {
-    fn create(word_count: i32, language: &str) -> Result<String> {
+    fn create(word_count: i32, language: &str, wallet_name: &str) -> Result<String> {
         let language = Lang::from_str(language)?.lang;
         let mnemonic = Mnemonic::generate_in(language, word_count as usize)?;
 
-        let wallet_password = cwu_security_utils::generate_secure_password(PASSWORD_LENGTH)?;
+        let mut wallet_password = cwu_security_utils::generate_secure_password(PASSWORD_LENGTH)?;
         let mut passphrase = cwu_security_utils::generate_secure_password(PASSWORD_LENGTH)?;
-        let master_password = format!("{}{}", wallet_password, passphrase);
+        let master_password = format!("{wallet_password}{passphrase}");
+        wallet_password.zeroize();
 
         let mut tron_key_pair = get_tron_key_pair_from_mnemonic(&mnemonic, &passphrase)?;
         let mut tron_key_pair_str = tron_key_pair.serialize()?;
@@ -74,14 +75,15 @@ impl InternalWallet {
             passphrase_encrypted,
             HashMap::from([(Network::Tron, tron_key_pair_encrypted)]),
         );
-        let wallet_json_string = to_string_pretty(&wallet)?;
+        let mut wallet_json_string = to_string_pretty(&wallet)?;
         let wallet_encrypted = cwu_security_utils::encrypt(&wallet_json_string, &master_password)?;
 
         // save wallet to file
         wallet.write_to_file(
             to_string_pretty(&wallet_encrypted)?,
-            Path::new("wallet.cwu.json"),
+            Path::new(format!("{wallet_name}.cwu.json").as_str()),
         )?;
+        wallet_json_string.zeroize();
 
         Ok(master_password)
     }
