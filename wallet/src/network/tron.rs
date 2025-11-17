@@ -6,10 +6,7 @@
 
 use crate::{WalletError, key_pair::KeyPair};
 use bip39::Mnemonic;
-use k256::{
-    PublicKey, SecretKey, elliptic_curve::generic_array::GenericArray,
-    elliptic_curve::sec1::ToEncodedPoint,
-};
+use k256::{PublicKey, SecretKey, elliptic_curve::sec1::ToEncodedPoint};
 use sha2::Sha256;
 use sha3::{Digest, Keccak256};
 use tiny_hderive::bip32::ExtendedPrivKey;
@@ -29,8 +26,7 @@ pub(crate) fn get_tron_key_pair_from_mnemonic(
 
     // 3. Private and Public Keys
     let secret = key.secret();
-    let secret_generic_array = GenericArray::from_slice(&secret);
-    let secret_key = SecretKey::from_bytes(secret_generic_array)?;
+    let secret_key = SecretKey::from_slice(&secret)?;
     let public_key = secret_key.public_key();
 
     // 4. TRON Address
