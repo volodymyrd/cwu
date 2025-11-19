@@ -24,6 +24,9 @@ pub enum WalletError {
 
     #[error("{0}")]
     EllipticCurveError(#[from] elliptic_curve::Error),
+
+    #[error("{0}")]
+    UnsupportedVersion(u32),
 }
 
 pub type Result<T> = std::result::Result<T, WalletError>;

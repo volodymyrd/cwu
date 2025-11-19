@@ -5,4 +5,7 @@ mod result;
 mod wallet;
 
 pub use result::{Result, WalletError};
-pub use wallet::EncryptedWalletV1;
+pub use wallet::EncryptedWallet;
+
+#[cfg(test)]
+mod tests;

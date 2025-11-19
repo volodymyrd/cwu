@@ -1,5 +1,4 @@
-use crate::cli::menu::check_balance::CheckBalance;
-use crate::cli::menu::new_wallet::NewWallet;
+use crate::cli::menu::{check_balance::CheckBalance, new_wallet::NewWallet, wallet::WalletMenu};
 use dialoguer::console::Term;
 use dialoguer::theme::Theme;
 use rand::prelude::IndexedRandom;
@@ -46,7 +45,7 @@ impl MainMenu {
 
             match &actions[action] {
                 MainMenu::OpenWallet => {
-                    println!("Open wallet");
+                    WalletMenu::apply(theme, term).await?;
                 }
                 MainMenu::CreateWallet => {
                     NewWallet::apply(theme, term).await?;

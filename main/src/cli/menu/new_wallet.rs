@@ -8,7 +8,7 @@ use termimad::MadSkin;
 pub(super) struct NewWallet {}
 
 impl NewWallet {
-    pub async fn apply(theme: &dyn Theme, term: &Term) -> Result<(), anyhow::Error> {
+    pub(super) async fn apply(theme: &dyn Theme, term: &Term) -> Result<(), anyhow::Error> {
         let lang = Language::apply(theme, term)?;
         if lang.is_none() {
             return Ok(());

@@ -31,11 +31,11 @@ impl KeyPair {
     }
 
     pub(crate) fn private_key(&self) -> &str {
-        &self.private_key
+        self.private_key.as_str()
     }
 
     pub(crate) fn address(&self) -> &str {
-        &self.address
+        self.address.as_str()
     }
 
     pub(crate) fn serialize(&self) -> Result<String> {

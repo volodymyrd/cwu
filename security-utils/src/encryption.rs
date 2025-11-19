@@ -9,7 +9,7 @@ use argon2::{
 use base64::{DecodeError, prelude::*};
 use rand::{RngCore, rng};
 use serde::{Deserialize, Serialize};
-use std::{convert::Infallible, string::FromUtf8Error};
+use std::{convert::Infallible, fs, path::Path, string::FromUtf8Error};
 
 const KEY_SIZE: usize = 32; // 256 bits for AES-256
 const NONCE_SIZE: usize = 12;
@@ -22,7 +22,15 @@ pub struct EncryptedPayload {
     pub nonce_b64: String,
 }
 
-#[derive(thiserror::Error, Debug, PartialEq, Eq)]
+impl EncryptedPayload {
+    pub fn from_file(path: impl AsRef<Path>) -> Result<Self> {
+        let file_content = fs::read_to_string(path)?;
+        let payload: Self = serde_json::from_str(&file_content)?;
+        Ok(payload)
+    }
+}
+
+#[derive(thiserror::Error, Debug)]
 pub enum EncryptionError {
     #[error("{0}")]
     ArgonError(#[from] argon2::Error),
@@ -38,6 +46,12 @@ pub enum EncryptionError {
 
     #[error("{0}")]
     PasswordHashError(#[from] password_hash::Error),
+
+    #[error("{0}")]
+    IoError(#[from] std::io::Error),
+
+    #[error("{0}")]
+    SerdeError(#[from] serde_json::Error),
 
     #[error("{0}")]
     Error(String),
@@ -174,8 +188,8 @@ mod tests {
         let result = decrypt(&payload, wrong_pass);
         assert!(result.is_err());
         assert_eq!(
-            result.unwrap_err(),
-            EncryptionError::Error("Decryption error: Error".to_string())
+            result.unwrap_err().to_string(),
+            "Decryption error: Error".to_string()
         );
     }
 
@@ -194,10 +208,7 @@ mod tests {
 
         let result = decrypt(&payload, master_pass);
         assert!(result.is_err());
-        assert_eq!(
-            result.unwrap_err(),
-            EncryptionError::Error("Decryption error: Error".to_string())
-        );
+        assert_eq!(result.unwrap_err().to_string(), "Decryption error: Error");
     }
 
     #[test]
@@ -214,8 +225,8 @@ mod tests {
         let result = decrypt(&payload, master_pass);
         assert!(result.is_err());
         assert_eq!(
-            result.unwrap_err(),
-            EncryptionError::Error("Decryption error: Error".to_string())
+            result.unwrap_err().to_string(),
+            "Decryption error: Error".to_string()
         );
     }
 }

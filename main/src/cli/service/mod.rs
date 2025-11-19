@@ -1,6 +1,7 @@
 use crate::cli::styles::progress::Progress;
 use cwu_model::Balance;
 use cwu_service::{CwuService, CwuServiceTrait, Result};
+use cwu_wallet::EncryptedWallet;
 
 pub(crate) struct ConsoleService {
     internal: CwuService,
@@ -13,6 +14,7 @@ impl ConsoleService {
         }
     }
 }
+
 impl CwuServiceTrait for ConsoleService {
     async fn create_wallet(
         &self,
@@ -27,6 +29,25 @@ impl CwuServiceTrait for ConsoleService {
             .await;
         progress.finish();
         master_password
+    }
+
+    async fn open_wallet(&self, name: &str, master_password: String) -> Result<EncryptedWallet> {
+        let progress = Progress::with_spinner(format!("Opening wallet '{}'...", name).as_str());
+        let wallet = self.internal.open_wallet(name, master_password).await;
+        progress.finish();
+        wallet
+    }
+
+    async fn backup_wallet(
+        &self,
+        wallet: &EncryptedWallet,
+        master_password: String,
+    ) -> Result<String> {
+        let progress =
+            Progress::with_spinner(format!("Backup wallet '{}'...", wallet.name()).as_str());
+        let mnemonic = self.internal.backup_wallet(wallet, master_password).await;
+        progress.finish();
+        mnemonic
     }
 
     async fn check_balance(&self, address: &str) -> Result<Balance> {

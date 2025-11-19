@@ -4,7 +4,7 @@ use crate::{CwuServiceError, CwuServiceTrait, Result};
 use cwu_ether::Usdt;
 use cwu_model::{Balance, Network};
 use cwu_tron::Tron;
-use cwu_wallet::EncryptedWalletV1;
+use cwu_wallet::EncryptedWallet;
 
 pub struct CwuService {}
 
@@ -34,12 +34,20 @@ impl CwuServiceTrait for CwuService {
         }
         #[cfg(not(feature = "wasm"))]
         {
-            Ok(EncryptedWalletV1::create(
-                word_count,
-                language,
-                wallet_name,
-            )?)
+            Ok(EncryptedWallet::create(word_count, language, wallet_name)?)
         }
+    }
+
+    async fn open_wallet(&self, name: &str, master_password: String) -> Result<EncryptedWallet> {
+        Ok(EncryptedWallet::open(name, master_password)?)
+    }
+
+    async fn backup_wallet(
+        &self,
+        wallet: &EncryptedWallet,
+        master_password: String,
+    ) -> Result<String> {
+        Ok(wallet.backup(master_password)?)
     }
 
     async fn check_balance(&self, address: &str) -> Result<Balance> {
