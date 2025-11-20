@@ -1,6 +1,7 @@
 use crate::cli::styles::progress::Progress;
 use cwu_model::Balance;
 use cwu_service::{CwuService, CwuServiceTrait, Result};
+use cwu_settings::CwuConfig;
 use cwu_wallet::EncryptedWallet;
 
 pub(crate) struct ConsoleService {
@@ -50,9 +51,9 @@ impl CwuServiceTrait for ConsoleService {
         mnemonic
     }
 
-    async fn check_balance(&self, address: &str) -> Result<Balance> {
+    async fn check_balance(&self, address: &str, config: &CwuConfig) -> Result<Balance> {
         let progress = Progress::with_spinner("Checking balance...");
-        let balance = self.internal.check_balance(address).await;
+        let balance = self.internal.check_balance(address, config).await;
         progress.finish();
         balance
     }

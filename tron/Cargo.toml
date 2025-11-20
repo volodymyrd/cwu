@@ -9,6 +9,7 @@ edition.workspace = true
 
 [dependencies]
 anyhow = { workspace = true }
+cwu-settings = { workspace = true }
 thiserror = { workspace = true }
 tronic = { workspace = true, features = ["tonic-tls"] }
 

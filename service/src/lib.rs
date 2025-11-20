@@ -4,6 +4,7 @@ mod service;
 mod wasm;
 
 use cwu_model::Balance;
+use cwu_settings::CwuConfig;
 use cwu_wallet::EncryptedWallet;
 pub use result::{CwuServiceError, Result};
 pub use service::CwuService;
@@ -28,5 +29,5 @@ pub trait CwuServiceTrait {
         master_password: String,
     ) -> impl Future<Output = Result<String>> + Send;
 
-    fn check_balance(&self, address: &str) -> impl Future<Output = Result<Balance>> + Send;
+    fn check_balance(&self, address: &str, config: &CwuConfig) -> impl Future<Output = Result<Balance>> + Send;
 }

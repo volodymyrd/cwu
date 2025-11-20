@@ -15,6 +15,7 @@ wasm = ["wasmtime"]
 anyhow = { workspace = true }
 cwu-ether = { workspace = true }
 cwu-model = { workspace = true }
+cwu-settings = { workspace = true }
 cwu-tron = { workspace = true }
 cwu-wallet = { workspace = true }
 rand = { workspace = true }

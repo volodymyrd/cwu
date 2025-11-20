@@ -9,6 +9,7 @@ edition.workspace = true
 
 [dependencies]
 alloy = { workspace = true, features = ["full"] }
+cwu-settings = { workspace = true }
 thiserror = { workspace = true }
 url = { workspace = true }
 

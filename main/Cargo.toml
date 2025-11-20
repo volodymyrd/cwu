@@ -16,6 +16,7 @@ anyhow = { workspace = true }
 colored = { workspace = true }
 cwu-model = { workspace = true }
 cwu-service = { workspace = true }
+cwu-settings = { workspace = true }
 cwu-wallet = { workspace = true }
 dialoguer = { workspace = true }
 indicatif = { workspace = true }

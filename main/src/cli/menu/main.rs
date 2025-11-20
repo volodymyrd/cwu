@@ -1,4 +1,5 @@
 use crate::cli::menu::{check_balance::CheckBalance, new_wallet::NewWallet, wallet::WalletMenu};
+use cwu_settings::CwuConfig;
 use dialoguer::console::Term;
 use dialoguer::theme::Theme;
 use rand::prelude::IndexedRandom;
@@ -21,7 +22,11 @@ impl std::fmt::Display for MainMenu {
 }
 
 impl MainMenu {
-    pub async fn apply(theme: &dyn Theme, term: &Term) -> Result<(), anyhow::Error> {
+    pub async fn apply(
+        theme: &dyn Theme,
+        term: &Term,
+        config: &CwuConfig,
+    ) -> Result<(), anyhow::Error> {
         loop {
             let actions = [
                 MainMenu::OpenWallet,
@@ -51,7 +56,7 @@ impl MainMenu {
                     NewWallet::apply(theme, term).await?;
                 }
                 MainMenu::CheckBalance => {
-                    CheckBalance::apply(theme, term).await?;
+                    CheckBalance::apply(theme, term, config).await?;
                 }
             }
         }

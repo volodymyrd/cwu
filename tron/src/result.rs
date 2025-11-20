@@ -8,6 +8,9 @@ pub enum TronError {
 
     #[error("An error occurred: {0}")]
     Err(Box<dyn std::error::Error + Send + Sync + 'static>),
+
+    #[error("USDT smart contract address is not set")]
+    UsdtSmartContractAddressIsNotSet,
 }
 
 impl From<Box<dyn std::error::Error + Send + Sync + 'static>> for TronError {

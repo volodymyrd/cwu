@@ -3,6 +3,7 @@ use crate::wasm::Host;
 use crate::{CwuServiceError, CwuServiceTrait, Result};
 use cwu_ether::Usdt;
 use cwu_model::{Balance, Network};
+use cwu_settings::CwuConfig;
 use cwu_tron::Tron;
 use cwu_wallet::EncryptedWallet;
 
@@ -50,7 +51,7 @@ impl CwuServiceTrait for CwuService {
         Ok(wallet.backup(master_password)?)
     }
 
-    async fn check_balance(&self, address: &str) -> Result<Balance> {
+    async fn check_balance(&self, address: &str, config: &CwuConfig) -> Result<Balance> {
         for network in Network::iter() {
             return match network {
                 Network::Ethereum => {
@@ -68,14 +69,18 @@ impl CwuServiceTrait for CwuService {
                     Ok(Balance::new(Network::Ethereum, usdt_balance))
                 }
                 Network::Tron => {
-                    let tron = Tron::new().await?;
+                    let tron = Tron::new(config).await?;
                     let trx_balance = tron.trx_balance(address).await;
                     if trx_balance.is_err() {
+                        eprintln!("Error: {}", trx_balance.err().unwrap());
                         continue;
                     }
                     let usdt_balance = match tron.usdt_balance(address).await {
                         Ok(usdt) => usdt.to_string(),
-                        Err(_) => "0 USDT".to_string(),
+                        Err(err) => {
+                            eprintln!("Error: {err}");
+                            "0 USDT".to_string()
+                        }
                     };
                     Ok(Balance::new(Network::Tron, usdt_balance))
                 }

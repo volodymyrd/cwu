@@ -9,6 +9,7 @@ pub struct BlockchainUrls {
     pub rpc_node: String,
     pub block_explorer: Option<String>,
     pub tx_api: Option<String>,
+    pub usdt_smart_contract_address: Option<String>,
 }
 
 #[derive(Debug, Deserialize, Clone)]
@@ -31,6 +32,7 @@ impl CwuConfig {
         // Determine the network mode (e.g., "testnet" or "mainnet").
         // Defaults to "testnet" if the environment variable is not set.
         let network_mode = env::var("NETWORK_MODE").unwrap_or_else(|_| "testnet".into());
+        println!("--- Wallet Running on {} ---", network_mode.to_uppercase());
         Self::load_config(&network_mode, "config/default")
     }
 
