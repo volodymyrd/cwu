@@ -1,0 +1,6 @@
+[ether]
+rpc_node = "https://ethereum-rpc.publicnode.com"
+
+[tron]
+rpc_node = "http://grpc.nile.trongrid.io:50051"
+usdt_smart_contract_address="TY1DBj7Ys1bDcK37kwATaQpHxdTCnYrr1f"
