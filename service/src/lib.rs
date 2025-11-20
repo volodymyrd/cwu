@@ -29,5 +29,9 @@ pub trait CwuServiceTrait {
         master_password: String,
     ) -> impl Future<Output = Result<String>> + Send;
 
-    fn check_balance(&self, address: &str, config: &CwuConfig) -> impl Future<Output = Result<Balance>> + Send;
+    fn check_balance(
+        &self,
+        address: &str,
+        config: &CwuConfig,
+    ) -> impl Future<Output = Result<Balance>> + Send;
 }
