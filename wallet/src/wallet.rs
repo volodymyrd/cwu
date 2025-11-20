@@ -1,4 +1,7 @@
-use crate::{Result, WalletError, language::Lang, network::get_tron_key_pair_from_mnemonic};
+use crate::{
+    Result, WalletError, key_pair::KeyPair, language::Lang,
+    network::get_tron_key_pair_from_mnemonic,
+};
 use bip39::Mnemonic;
 use cwu_model::Network;
 use cwu_security_utils::EncryptedPayload;
@@ -44,6 +47,12 @@ impl EncryptedWallet {
         }
     }
 
+    pub fn addresses(&self) -> &HashMap<Network, String> {
+        match self {
+            EncryptedWallet::Current(w) => &w.addresses,
+        }
+    }
+
     pub(crate) fn mnemonic(&self) -> &EncryptedPayload {
         match self {
             EncryptedWallet::Current(w) => &w.mnemonic,
@@ -63,6 +72,7 @@ pub struct EncryptedWalletV1 {
     mnemonic: EncryptedPayload,
     passphrase: EncryptedPayload,
     key_pairs: HashMap<Network, EncryptedPayload>,
+    addresses: HashMap<Network, String>,
     version: u32,
 }
 
@@ -72,12 +82,14 @@ impl EncryptedWalletV1 {
         mnemonic: EncryptedPayload,
         passphrase: EncryptedPayload,
         key_pairs: HashMap<Network, EncryptedPayload>,
+        addresses: HashMap<Network, String>,
     ) -> Self {
         Self {
             name: wallet_name.to_string(),
             mnemonic,
             passphrase,
             key_pairs,
+            addresses,
             version: 1,
         }
     }
@@ -94,12 +106,27 @@ fn create(word_count: i32, language: &str, wallet_name: &str) -> Result<String> 
     let master_password = format!("{wallet_password}{passphrase}");
     wallet_password.zeroize();
 
-    let mut tron_key_pair = get_tron_key_pair_from_mnemonic(&mnemonic, &passphrase)?;
-    let mut tron_key_pair_str = tron_key_pair.serialize()?;
-    let tron_key_pair_encrypted =
-        cwu_security_utils::encrypt(&tron_key_pair_str, &master_password)?;
-    tron_key_pair.zeroize();
-    tron_key_pair_str.zeroize();
+    let mut key_pairs = HashMap::new();
+    let mut addresses = HashMap::new();
+    for &network in Network::iter() {
+        let mut key_pair = KeyPair::default();
+        match network {
+            Network::Ethereum => {}
+            Network::Tron => {
+                key_pair = get_tron_key_pair_from_mnemonic(&mnemonic, &passphrase)?;
+            }
+        }
+        if key_pair.is_empty() {
+            continue;
+        }
+        let address = key_pair.address().to_string();
+        let mut key_pair_str = key_pair.serialize()?;
+        let key_pair_encrypted = cwu_security_utils::encrypt(&key_pair_str, &master_password)?;
+        key_pair.zeroize();
+        key_pair_str.zeroize();
+        key_pairs.insert(network, key_pair_encrypted);
+        addresses.insert(network, address);
+    }
 
     let passphrase_encrypted = cwu_security_utils::encrypt(&passphrase, &master_password)?;
     passphrase.zeroize();
@@ -111,7 +138,8 @@ fn create(word_count: i32, language: &str, wallet_name: &str) -> Result<String> 
         wallet_name,
         mnemonic_encrypted,
         passphrase_encrypted,
-        HashMap::from([(Network::Tron, tron_key_pair_encrypted)]),
+        key_pairs,
+        addresses,
     );
     let mut wallet_json_string = to_string_pretty(&wallet)?;
     let wallet_encrypted = cwu_security_utils::encrypt(&wallet_json_string, &master_password)?;

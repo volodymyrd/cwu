@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::to_string_pretty;
 use zeroize::Zeroize;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Default)]
 pub(crate) struct KeyPair {
     private_key: String,
     address: String,
@@ -28,6 +28,10 @@ impl KeyPair {
             private_key,
             address,
         }
+    }
+
+    pub(crate) fn is_empty(&self) -> bool {
+        self.private_key.is_empty() || self.address.is_empty()
     }
 
     pub(crate) fn private_key(&self) -> &str {
