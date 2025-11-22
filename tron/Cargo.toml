@@ -13,10 +13,9 @@ cwu-settings = { workspace = true }
 thiserror = { workspace = true }
 tronic = { workspace = true, features = ["tonic-tls", "mock-provider"] }
 
-
 [dev-dependencies]
-prost = "0.12"
-tokio = { workspace = true }
 hex = { workspace = true }
-serde ={ workspace = true }
-serde_json ={ workspace = true }
+prost = "0.12"
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
