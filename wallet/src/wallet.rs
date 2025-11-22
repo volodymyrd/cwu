@@ -35,6 +35,22 @@ impl EncryptedWallet {
         }
     }
 
+    pub(crate) fn key_pair(
+        &self,
+        mut master_password: String,
+        network: Network,
+    ) -> Result<KeyPair> {
+        let encrypted_key_pair = self
+            .key_pairs()
+            .get(&network)
+            .ok_or(WalletError::NotFoundKeyPair(network))?;
+        let mut key_pair_str = cwu_security_utils::decrypt(encrypted_key_pair, &master_password)?;
+        master_password.zeroize();
+        let key_pair = serde_json::from_str(&key_pair_str)?;
+        key_pair_str.zeroize();
+        Ok(key_pair)
+    }
+
     pub fn backup(&self, mut master_password: String) -> Result<String> {
         let mnemonic = cwu_security_utils::decrypt(self.mnemonic(), &master_password)?;
         master_password.zeroize();
@@ -50,6 +66,12 @@ impl EncryptedWallet {
     pub fn addresses(&self) -> &HashMap<Network, String> {
         match self {
             EncryptedWallet::Current(w) => &w.addresses,
+        }
+    }
+
+    pub fn key_pairs(&self) -> &HashMap<Network, EncryptedPayload> {
+        match self {
+            EncryptedWallet::Current(w) => &w.key_pairs,
         }
     }
 

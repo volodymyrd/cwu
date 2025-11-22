@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::to_string_pretty;
 use zeroize::Zeroize;
 
-#[derive(Serialize, Deserialize, Default)]
+#[derive(Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub(crate) struct KeyPair {
     private_key: String,
     address: String,

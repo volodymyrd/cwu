@@ -1,4 +1,5 @@
 use crate::language::InvalidLanguage;
+use cwu_model::Network;
 use cwu_security_utils::{EncryptionError, PasswordError};
 use k256::elliptic_curve;
 
@@ -27,6 +28,9 @@ pub enum WalletError {
 
     #[error("{0}")]
     UnsupportedVersion(u32),
+
+    #[error("Not found key pair for network: {0}")]
+    NotFoundKeyPair(Network),
 }
 
 pub type Result<T> = std::result::Result<T, WalletError>;
