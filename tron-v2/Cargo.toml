@@ -1,0 +1,21 @@
+[package]
+name = "cwu-tron-v2"
+version.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+license.workspace = true
+edition.workspace = true
+
+[dependencies]
+prost = { workspace = true }
+prost-types = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+thiserror = { workspace = true }
+tonic = { workspace = true }
+tonic-prost = { workspace = true }
+
+[build-dependencies]
+reqwest = { workspace = true, features = ["blocking"] }
+tonic-prost-build = { workspace = true }
+zip = { workspace = true }
