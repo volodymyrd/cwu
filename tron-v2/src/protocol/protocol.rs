@@ -124,17 +124,7 @@ pub struct Proposal {
 }
 /// Nested message and enum types in `Proposal`.
 pub mod proposal {
-    #[derive(
-        Clone,
-        Copy,
-        Debug,
-        PartialEq,
-        Eq,
-        Hash,
-        PartialOrd,
-        Ord,
-        ::prost::Enumeration
-    )]
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum State {
         Pending = 0,
@@ -218,17 +208,7 @@ pub struct MarketOrder {
 }
 /// Nested message and enum types in `MarketOrder`.
 pub mod market_order {
-    #[derive(
-        Clone,
-        Copy,
-        Debug,
-        PartialEq,
-        Eq,
-        Hash,
-        PartialOrd,
-        Ord,
-        ::prost::Enumeration
-    )]
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum State {
         Active = 0,
@@ -395,27 +375,17 @@ pub struct Account {
     #[prost(bytes = "vec", tag = "57")]
     pub asset_issued_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(map = "string, int64", tag = "18")]
-    pub latest_asset_operation_time: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        i64,
-    >,
+    pub latest_asset_operation_time:
+        ::std::collections::HashMap<::prost::alloc::string::String, i64>,
     #[prost(map = "string, int64", tag = "58")]
-    pub latest_asset_operation_time_v2: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        i64,
-    >,
+    pub latest_asset_operation_time_v2:
+        ::std::collections::HashMap<::prost::alloc::string::String, i64>,
     #[prost(int64, tag = "19")]
     pub free_net_usage: i64,
     #[prost(map = "string, int64", tag = "20")]
-    pub free_asset_net_usage: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        i64,
-    >,
+    pub free_asset_net_usage: ::std::collections::HashMap<::prost::alloc::string::String, i64>,
     #[prost(map = "string, int64", tag = "59")]
-    pub free_asset_net_usage_v2: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        i64,
-    >,
+    pub free_asset_net_usage_v2: ::std::collections::HashMap<::prost::alloc::string::String, i64>,
     #[prost(int64, tag = "21")]
     pub latest_consume_time: i64,
     #[prost(int64, tag = "22")]
@@ -557,17 +527,7 @@ pub struct Permission {
 }
 /// Nested message and enum types in `Permission`.
 pub mod permission {
-    #[derive(
-        Clone,
-        Copy,
-        Debug,
-        PartialEq,
-        Eq,
-        Hash,
-        PartialOrd,
-        Ord,
-        ::prost::Enumeration
-    )]
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum PermissionType {
         Owner = 0,
@@ -719,15 +679,7 @@ pub mod transaction {
     pub mod contract {
         #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
         #[derive(
-            Clone,
-            Copy,
-            Debug,
-            PartialEq,
-            Eq,
-            Hash,
-            PartialOrd,
-            Ord,
-            ::prost::Enumeration
+            Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration,
         )]
         #[repr(i32)]
         pub enum ContractType {
@@ -788,9 +740,7 @@ pub mod transaction {
                     Self::WitnessCreateContract => "WitnessCreateContract",
                     Self::AssetIssueContract => "AssetIssueContract",
                     Self::WitnessUpdateContract => "WitnessUpdateContract",
-                    Self::ParticipateAssetIssueContract => {
-                        "ParticipateAssetIssueContract"
-                    }
+                    Self::ParticipateAssetIssueContract => "ParticipateAssetIssueContract",
                     Self::AccountUpdateContract => "AccountUpdateContract",
                     Self::FreezeBalanceContract => "FreezeBalanceContract",
                     Self::UnfreezeBalanceContract => "UnfreezeBalanceContract",
@@ -811,9 +761,7 @@ pub mod transaction {
                     Self::ExchangeWithdrawContract => "ExchangeWithdrawContract",
                     Self::ExchangeTransactionContract => "ExchangeTransactionContract",
                     Self::UpdateEnergyLimitContract => "UpdateEnergyLimitContract",
-                    Self::AccountPermissionUpdateContract => {
-                        "AccountPermissionUpdateContract"
-                    }
+                    Self::AccountPermissionUpdateContract => "AccountPermissionUpdateContract",
                     Self::ClearAbiContract => "ClearABIContract",
                     Self::UpdateBrokerageContract => "UpdateBrokerageContract",
                     Self::ShieldedTransferContract => "ShieldedTransferContract",
@@ -821,9 +769,7 @@ pub mod transaction {
                     Self::MarketCancelOrderContract => "MarketCancelOrderContract",
                     Self::FreezeBalanceV2Contract => "FreezeBalanceV2Contract",
                     Self::UnfreezeBalanceV2Contract => "UnfreezeBalanceV2Contract",
-                    Self::WithdrawExpireUnfreezeContract => {
-                        "WithdrawExpireUnfreezeContract"
-                    }
+                    Self::WithdrawExpireUnfreezeContract => "WithdrawExpireUnfreezeContract",
                     Self::DelegateResourceContract => "DelegateResourceContract",
                     Self::UnDelegateResourceContract => "UnDelegateResourceContract",
                     Self::CancelAllUnfreezeV2Contract => "CancelAllUnfreezeV2Contract",
@@ -840,9 +786,7 @@ pub mod transaction {
                     "WitnessCreateContract" => Some(Self::WitnessCreateContract),
                     "AssetIssueContract" => Some(Self::AssetIssueContract),
                     "WitnessUpdateContract" => Some(Self::WitnessUpdateContract),
-                    "ParticipateAssetIssueContract" => {
-                        Some(Self::ParticipateAssetIssueContract)
-                    }
+                    "ParticipateAssetIssueContract" => Some(Self::ParticipateAssetIssueContract),
                     "AccountUpdateContract" => Some(Self::AccountUpdateContract),
                     "FreezeBalanceContract" => Some(Self::FreezeBalanceContract),
                     "UnfreezeBalanceContract" => Some(Self::UnfreezeBalanceContract),
@@ -861,9 +805,7 @@ pub mod transaction {
                     "ExchangeCreateContract" => Some(Self::ExchangeCreateContract),
                     "ExchangeInjectContract" => Some(Self::ExchangeInjectContract),
                     "ExchangeWithdrawContract" => Some(Self::ExchangeWithdrawContract),
-                    "ExchangeTransactionContract" => {
-                        Some(Self::ExchangeTransactionContract)
-                    }
+                    "ExchangeTransactionContract" => Some(Self::ExchangeTransactionContract),
                     "UpdateEnergyLimitContract" => Some(Self::UpdateEnergyLimitContract),
                     "AccountPermissionUpdateContract" => {
                         Some(Self::AccountPermissionUpdateContract)
@@ -875,16 +817,10 @@ pub mod transaction {
                     "MarketCancelOrderContract" => Some(Self::MarketCancelOrderContract),
                     "FreezeBalanceV2Contract" => Some(Self::FreezeBalanceV2Contract),
                     "UnfreezeBalanceV2Contract" => Some(Self::UnfreezeBalanceV2Contract),
-                    "WithdrawExpireUnfreezeContract" => {
-                        Some(Self::WithdrawExpireUnfreezeContract)
-                    }
+                    "WithdrawExpireUnfreezeContract" => Some(Self::WithdrawExpireUnfreezeContract),
                     "DelegateResourceContract" => Some(Self::DelegateResourceContract),
-                    "UnDelegateResourceContract" => {
-                        Some(Self::UnDelegateResourceContract)
-                    }
-                    "CancelAllUnfreezeV2Contract" => {
-                        Some(Self::CancelAllUnfreezeV2Contract)
-                    }
+                    "UnDelegateResourceContract" => Some(Self::UnDelegateResourceContract),
+                    "CancelAllUnfreezeV2Contract" => Some(Self::CancelAllUnfreezeV2Contract),
                     _ => None,
                 }
             }
@@ -921,23 +857,13 @@ pub mod transaction {
         #[prost(int64, tag = "27")]
         pub withdraw_expire_amount: i64,
         #[prost(map = "string, int64", tag = "28")]
-        pub cancel_unfreeze_v2_amount: ::std::collections::HashMap<
-            ::prost::alloc::string::String,
-            i64,
-        >,
+        pub cancel_unfreeze_v2_amount:
+            ::std::collections::HashMap<::prost::alloc::string::String, i64>,
     }
     /// Nested message and enum types in `Result`.
     pub mod result {
         #[derive(
-            Clone,
-            Copy,
-            Debug,
-            PartialEq,
-            Eq,
-            Hash,
-            PartialOrd,
-            Ord,
-            ::prost::Enumeration
+            Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration,
         )]
         #[repr(i32)]
         pub enum Code {
@@ -966,15 +892,7 @@ pub mod transaction {
         }
         #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
         #[derive(
-            Clone,
-            Copy,
-            Debug,
-            PartialEq,
-            Eq,
-            Hash,
-            PartialOrd,
-            Ord,
-            ::prost::Enumeration
+            Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration,
         )]
         #[repr(i32)]
         pub enum ContractResult {
@@ -1121,10 +1039,7 @@ pub struct TransactionInfo {
     #[prost(int64, tag = "28")]
     pub withdraw_expire_amount: i64,
     #[prost(map = "string, int64", tag = "29")]
-    pub cancel_unfreeze_v2_amount: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        i64,
-    >,
+    pub cancel_unfreeze_v2_amount: ::std::collections::HashMap<::prost::alloc::string::String, i64>,
 }
 /// Nested message and enum types in `TransactionInfo`.
 pub mod transaction_info {
@@ -1137,17 +1052,7 @@ pub mod transaction_info {
         #[prost(bytes = "vec", tag = "3")]
         pub data: ::prost::alloc::vec::Vec<u8>,
     }
-    #[derive(
-        Clone,
-        Copy,
-        Debug,
-        PartialEq,
-        Eq,
-        Hash,
-        PartialOrd,
-        Ord,
-        ::prost::Enumeration
-    )]
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum Code {
         Sucess = 0,
@@ -1261,17 +1166,7 @@ pub mod block_inventory {
         #[prost(int64, tag = "2")]
         pub number: i64,
     }
-    #[derive(
-        Clone,
-        Copy,
-        Debug,
-        PartialEq,
-        Eq,
-        Hash,
-        PartialOrd,
-        Ord,
-        ::prost::Enumeration
-    )]
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum Type {
         Sync = 0,
@@ -1310,17 +1205,7 @@ pub struct Inventory {
 }
 /// Nested message and enum types in `Inventory`.
 pub mod inventory {
-    #[derive(
-        Clone,
-        Copy,
-        Debug,
-        PartialEq,
-        Eq,
-        Hash,
-        PartialOrd,
-        Ord,
-        ::prost::Enumeration
-    )]
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum InventoryType {
         Trx = 0,
@@ -1360,17 +1245,7 @@ pub struct Items {
 }
 /// Nested message and enum types in `Items`.
 pub mod items {
-    #[derive(
-        Clone,
-        Copy,
-        Debug,
-        PartialEq,
-        Eq,
-        Hash,
-        PartialOrd,
-        Ord,
-        ::prost::Enumeration
-    )]
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum ItemType {
         Err = 0,
@@ -1517,10 +1392,8 @@ pub struct NodeInfo {
     #[prost(message, optional, tag = "10")]
     pub machine_info: ::core::option::Option<node_info::MachineInfo>,
     #[prost(map = "string, string", tag = "11")]
-    pub cheat_witness_info_map: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        ::prost::alloc::string::String,
-    >,
+    pub cheat_witness_info_map:
+        ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
 }
 /// Nested message and enum types in `NodeInfo`.
 pub mod node_info {
@@ -1643,13 +1516,9 @@ pub mod node_info {
         #[prost(double, tag = "11")]
         pub process_cpu_rate: f64,
         #[prost(message, repeated, tag = "12")]
-        pub memory_desc_info_list: ::prost::alloc::vec::Vec<
-            machine_info::MemoryDescInfo,
-        >,
+        pub memory_desc_info_list: ::prost::alloc::vec::Vec<machine_info::MemoryDescInfo>,
         #[prost(message, repeated, tag = "13")]
-        pub dead_lock_thread_info_list: ::prost::alloc::vec::Vec<
-            machine_info::DeadLockThreadInfo,
-        >,
+        pub dead_lock_thread_info_list: ::prost::alloc::vec::Vec<machine_info::DeadLockThreadInfo>,
     }
     /// Nested message and enum types in `MachineInfo`.
     pub mod machine_info {
@@ -1787,9 +1656,7 @@ pub mod metrics_info {
         #[prost(int32, tag = "7")]
         pub disconnection_count: i32,
         #[prost(message, repeated, tag = "8")]
-        pub disconnection_detail: ::prost::alloc::vec::Vec<
-            net_info::DisconnectionDetailInfo,
-        >,
+        pub disconnection_detail: ::prost::alloc::vec::Vec<net_info::DisconnectionDetailInfo>,
         #[prost(message, optional, tag = "9")]
         pub udp_in_traffic: ::core::option::Option<RateInfo>,
         #[prost(message, optional, tag = "10")]
@@ -1896,17 +1763,7 @@ pub mod pbft_message {
         #[prost(bytes = "vec", tag = "5")]
         pub data: ::prost::alloc::vec::Vec<u8>,
     }
-    #[derive(
-        Clone,
-        Copy,
-        Debug,
-        PartialEq,
-        Eq,
-        Hash,
-        PartialOrd,
-        Ord,
-        ::prost::Enumeration
-    )]
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum MsgType {
         ViewChange = 0,
@@ -1941,17 +1798,7 @@ pub mod pbft_message {
             }
         }
     }
-    #[derive(
-        Clone,
-        Copy,
-        Debug,
-        PartialEq,
-        Eq,
-        Hash,
-        PartialOrd,
-        Ord,
-        ::prost::Enumeration
-    )]
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum DataType {
         Block = 0,
@@ -2649,15 +2496,7 @@ pub mod smart_contract {
                 pub r#type: ::prost::alloc::string::String,
             }
             #[derive(
-                Clone,
-                Copy,
-                Debug,
-                PartialEq,
-                Eq,
-                Hash,
-                PartialOrd,
-                Ord,
-                ::prost::Enumeration
+                Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration,
             )]
             #[repr(i32)]
             pub enum EntryType {
@@ -2700,15 +2539,7 @@ pub mod smart_contract {
                 }
             }
             #[derive(
-                Clone,
-                Copy,
-                Debug,
-                PartialEq,
-                Eq,
-                Hash,
-                PartialOrd,
-                Ord,
-                ::prost::Enumeration
+                Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration,
             )]
             #[repr(i32)]
             pub enum StateMutabilityType {
@@ -2947,17 +2778,7 @@ pub struct Return {
 }
 /// Nested message and enum types in `Return`.
 pub mod r#return {
-    #[derive(
-        Clone,
-        Copy,
-        Debug,
-        PartialEq,
-        Eq,
-        Hash,
-        PartialOrd,
-        Ord,
-        ::prost::Enumeration
-    )]
+    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
     #[repr(i32)]
     pub enum ResponseCode {
         Success = 0,
@@ -3013,9 +2834,7 @@ pub mod r#return {
                 "TRANSACTION_EXPIRATION_ERROR" => Some(Self::TransactionExpirationError),
                 "SERVER_BUSY" => Some(Self::ServerBusy),
                 "NO_CONNECTION" => Some(Self::NoConnection),
-                "NOT_ENOUGH_EFFECTIVE_CONNECTION" => {
-                    Some(Self::NotEnoughEffectiveConnection)
-                }
+                "NOT_ENOUGH_EFFECTIVE_CONNECTION" => Some(Self::NotEnoughEffectiveConnection),
                 "BLOCK_UNSOLIDIFIED" => Some(Self::BlockUnsolidified),
                 "OTHER_ERROR" => Some(Self::OtherError),
                 _ => None,
@@ -3208,10 +3027,7 @@ pub struct AccountNetMessage {
     #[prost(map = "string, int64", tag = "5")]
     pub asset_net_used: ::std::collections::HashMap<::prost::alloc::string::String, i64>,
     #[prost(map = "string, int64", tag = "6")]
-    pub asset_net_limit: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        i64,
-    >,
+    pub asset_net_limit: ::std::collections::HashMap<::prost::alloc::string::String, i64>,
     #[prost(int64, tag = "7")]
     pub total_net_limit: i64,
     #[prost(int64, tag = "8")]
@@ -3231,10 +3047,7 @@ pub struct AccountResourceMessage {
     #[prost(map = "string, int64", tag = "5")]
     pub asset_net_used: ::std::collections::HashMap<::prost::alloc::string::String, i64>,
     #[prost(map = "string, int64", tag = "6")]
-    pub asset_net_limit: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        i64,
-    >,
+    pub asset_net_limit: ::std::collections::HashMap<::prost::alloc::string::String, i64>,
     #[prost(int64, tag = "7")]
     pub total_net_limit: i64,
     #[prost(int64, tag = "8")]
@@ -3343,15 +3156,7 @@ pub mod transaction_sign_weight {
     /// Nested message and enum types in `Result`.
     pub mod result {
         #[derive(
-            Clone,
-            Copy,
-            Debug,
-            PartialEq,
-            Eq,
-            Hash,
-            PartialOrd,
-            Ord,
-            ::prost::Enumeration
+            Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration,
         )]
         #[repr(i32)]
         pub enum ResponseCode {
@@ -3415,15 +3220,7 @@ pub mod transaction_approved_list {
     /// Nested message and enum types in `Result`.
     pub mod result {
         #[derive(
-            Clone,
-            Copy,
-            Debug,
-            PartialEq,
-            Eq,
-            Hash,
-            PartialOrd,
-            Ord,
-            ::prost::Enumeration
+            Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration,
         )]
         #[repr(i32)]
         pub enum ResponseCode {
@@ -3879,10 +3676,10 @@ pub mod wallet_client {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value,
+        clippy::let_unit_value
     )]
-    use tonic::codegen::*;
     use tonic::codegen::http::Uri;
+    use tonic::codegen::*;
     #[derive(Debug, Clone)]
     pub struct WalletClient<T> {
         inner: tonic::client::Grpc<T>,
@@ -3921,14 +3718,13 @@ pub mod wallet_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-                Response = http::Response<
-                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    http::Request<tonic::body::Body>,
+                    Response = http::Response<
+                        <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    >,
                 >,
-            >,
-            <T as tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
+            <T as tonic::codegen::Service<http::Request<tonic::body::Body>>>::Error:
+                Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             WalletClient::new(InterceptedService::new(inner, interceptor))
         }
@@ -3967,18 +3763,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::Account>,
         ) -> std::result::Result<tonic::Response<super::Account>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAccount",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAccount");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetAccount"));
@@ -3988,18 +3777,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::Account>,
         ) -> std::result::Result<tonic::Response<super::Account>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAccountById",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAccountById");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetAccountById"));
@@ -4008,22 +3790,13 @@ pub mod wallet_client {
         pub async fn get_account_balance(
             &mut self,
             request: impl tonic::IntoRequest<super::AccountBalanceRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::AccountBalanceResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::AccountBalanceResponse>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAccountBalance",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAccountBalance");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetAccountBalance"));
@@ -4032,22 +3805,13 @@ pub mod wallet_client {
         pub async fn get_block_balance_trace(
             &mut self,
             request: impl tonic::IntoRequest<super::block_balance_trace::BlockIdentifier>,
-        ) -> std::result::Result<
-            tonic::Response<super::BlockBalanceTrace>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::BlockBalanceTrace>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBlockBalanceTrace",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBlockBalanceTrace");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBlockBalanceTrace"));
@@ -4058,18 +3822,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::TransferContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateTransaction",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateTransaction");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CreateTransaction"));
@@ -4079,22 +3836,13 @@ pub mod wallet_client {
         pub async fn create_transaction2(
             &mut self,
             request: impl tonic::IntoRequest<super::TransferContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateTransaction2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateTransaction2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CreateTransaction2"));
@@ -4104,18 +3852,12 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::Transaction>,
         ) -> std::result::Result<tonic::Response<super::Return>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/BroadcastTransaction",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/BroadcastTransaction");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "BroadcastTransaction"));
@@ -4126,18 +3868,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::AccountUpdateContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UpdateAccount",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UpdateAccount");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UpdateAccount"));
@@ -4147,18 +3882,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::SetAccountIdContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/SetAccountId",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/SetAccountId");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "SetAccountId"));
@@ -4168,22 +3896,13 @@ pub mod wallet_client {
         pub async fn update_account2(
             &mut self,
             request: impl tonic::IntoRequest<super::AccountUpdateContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UpdateAccount2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UpdateAccount2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UpdateAccount2"));
@@ -4194,18 +3913,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::VoteWitnessContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/VoteWitnessAccount",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/VoteWitnessAccount");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "VoteWitnessAccount"));
@@ -4215,22 +3927,13 @@ pub mod wallet_client {
         pub async fn update_setting(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateSettingContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UpdateSetting",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UpdateSetting");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UpdateSetting"));
@@ -4240,22 +3943,13 @@ pub mod wallet_client {
         pub async fn update_energy_limit(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateEnergyLimitContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UpdateEnergyLimit",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UpdateEnergyLimit");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UpdateEnergyLimit"));
@@ -4265,22 +3959,13 @@ pub mod wallet_client {
         pub async fn vote_witness_account2(
             &mut self,
             request: impl tonic::IntoRequest<super::VoteWitnessContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/VoteWitnessAccount2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/VoteWitnessAccount2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "VoteWitnessAccount2"));
@@ -4291,18 +3976,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::AssetIssueContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateAssetIssue",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateAssetIssue");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CreateAssetIssue"));
@@ -4312,22 +3990,13 @@ pub mod wallet_client {
         pub async fn create_asset_issue2(
             &mut self,
             request: impl tonic::IntoRequest<super::AssetIssueContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateAssetIssue2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateAssetIssue2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CreateAssetIssue2"));
@@ -4338,18 +4007,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::WitnessUpdateContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UpdateWitness",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UpdateWitness");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UpdateWitness"));
@@ -4359,22 +4021,13 @@ pub mod wallet_client {
         pub async fn update_witness2(
             &mut self,
             request: impl tonic::IntoRequest<super::WitnessUpdateContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UpdateWitness2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UpdateWitness2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UpdateWitness2"));
@@ -4385,18 +4038,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::AccountCreateContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateAccount",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateAccount");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CreateAccount"));
@@ -4406,22 +4052,13 @@ pub mod wallet_client {
         pub async fn create_account2(
             &mut self,
             request: impl tonic::IntoRequest<super::AccountCreateContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateAccount2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateAccount2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CreateAccount2"));
@@ -4432,18 +4069,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::WitnessCreateContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateWitness",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateWitness");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CreateWitness"));
@@ -4453,22 +4083,13 @@ pub mod wallet_client {
         pub async fn create_witness2(
             &mut self,
             request: impl tonic::IntoRequest<super::WitnessCreateContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateWitness2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateWitness2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CreateWitness2"));
@@ -4479,18 +4100,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::TransferAssetContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/TransferAsset",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/TransferAsset");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "TransferAsset"));
@@ -4500,22 +4114,13 @@ pub mod wallet_client {
         pub async fn transfer_asset2(
             &mut self,
             request: impl tonic::IntoRequest<super::TransferAssetContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/TransferAsset2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/TransferAsset2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "TransferAsset2"));
@@ -4526,18 +4131,12 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::ParticipateAssetIssueContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ParticipateAssetIssue",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/ParticipateAssetIssue");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ParticipateAssetIssue"));
@@ -4547,22 +4146,14 @@ pub mod wallet_client {
         pub async fn participate_asset_issue2(
             &mut self,
             request: impl tonic::IntoRequest<super::ParticipateAssetIssueContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ParticipateAssetIssue2",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/ParticipateAssetIssue2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ParticipateAssetIssue2"));
@@ -4573,18 +4164,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::FreezeBalanceContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/FreezeBalance",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/FreezeBalance");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "FreezeBalance"));
@@ -4594,22 +4178,13 @@ pub mod wallet_client {
         pub async fn freeze_balance2(
             &mut self,
             request: impl tonic::IntoRequest<super::FreezeBalanceContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/FreezeBalance2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/FreezeBalance2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "FreezeBalance2"));
@@ -4619,22 +4194,13 @@ pub mod wallet_client {
         pub async fn freeze_balance_v2(
             &mut self,
             request: impl tonic::IntoRequest<super::FreezeBalanceV2Contract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/FreezeBalanceV2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/FreezeBalanceV2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "FreezeBalanceV2"));
@@ -4645,18 +4211,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::UnfreezeBalanceContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UnfreezeBalance",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UnfreezeBalance");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UnfreezeBalance"));
@@ -4666,22 +4225,13 @@ pub mod wallet_client {
         pub async fn unfreeze_balance2(
             &mut self,
             request: impl tonic::IntoRequest<super::UnfreezeBalanceContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UnfreezeBalance2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UnfreezeBalance2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UnfreezeBalance2"));
@@ -4691,22 +4241,13 @@ pub mod wallet_client {
         pub async fn unfreeze_balance_v2(
             &mut self,
             request: impl tonic::IntoRequest<super::UnfreezeBalanceV2Contract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UnfreezeBalanceV2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UnfreezeBalanceV2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UnfreezeBalanceV2"));
@@ -4717,18 +4258,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::UnfreezeAssetContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UnfreezeAsset",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UnfreezeAsset");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UnfreezeAsset"));
@@ -4738,22 +4272,13 @@ pub mod wallet_client {
         pub async fn unfreeze_asset2(
             &mut self,
             request: impl tonic::IntoRequest<super::UnfreezeAssetContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UnfreezeAsset2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UnfreezeAsset2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UnfreezeAsset2"));
@@ -4764,18 +4289,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::WithdrawBalanceContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/WithdrawBalance",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/WithdrawBalance");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "WithdrawBalance"));
@@ -4785,22 +4303,13 @@ pub mod wallet_client {
         pub async fn withdraw_balance2(
             &mut self,
             request: impl tonic::IntoRequest<super::WithdrawBalanceContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/WithdrawBalance2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/WithdrawBalance2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "WithdrawBalance2"));
@@ -4809,22 +4318,14 @@ pub mod wallet_client {
         pub async fn withdraw_expire_unfreeze(
             &mut self,
             request: impl tonic::IntoRequest<super::WithdrawExpireUnfreezeContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/WithdrawExpireUnfreeze",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/WithdrawExpireUnfreeze");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "WithdrawExpireUnfreeze"));
@@ -4833,22 +4334,13 @@ pub mod wallet_client {
         pub async fn delegate_resource(
             &mut self,
             request: impl tonic::IntoRequest<super::DelegateResourceContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/DelegateResource",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/DelegateResource");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "DelegateResource"));
@@ -4857,22 +4349,13 @@ pub mod wallet_client {
         pub async fn un_delegate_resource(
             &mut self,
             request: impl tonic::IntoRequest<super::UnDelegateResourceContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UnDelegateResource",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UnDelegateResource");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UnDelegateResource"));
@@ -4881,22 +4364,13 @@ pub mod wallet_client {
         pub async fn cancel_all_unfreeze_v2(
             &mut self,
             request: impl tonic::IntoRequest<super::CancelAllUnfreezeV2Contract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CancelAllUnfreezeV2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/CancelAllUnfreezeV2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CancelAllUnfreezeV2"));
@@ -4907,18 +4381,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateAssetContract>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UpdateAsset",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UpdateAsset");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UpdateAsset"));
@@ -4928,22 +4395,13 @@ pub mod wallet_client {
         pub async fn update_asset2(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateAssetContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UpdateAsset2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UpdateAsset2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UpdateAsset2"));
@@ -4952,22 +4410,13 @@ pub mod wallet_client {
         pub async fn proposal_create(
             &mut self,
             request: impl tonic::IntoRequest<super::ProposalCreateContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ProposalCreate",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ProposalCreate");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ProposalCreate"));
@@ -4976,22 +4425,13 @@ pub mod wallet_client {
         pub async fn proposal_approve(
             &mut self,
             request: impl tonic::IntoRequest<super::ProposalApproveContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ProposalApprove",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ProposalApprove");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ProposalApprove"));
@@ -5000,22 +4440,13 @@ pub mod wallet_client {
         pub async fn proposal_delete(
             &mut self,
             request: impl tonic::IntoRequest<super::ProposalDeleteContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ProposalDelete",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ProposalDelete");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ProposalDelete"));
@@ -5024,22 +4455,13 @@ pub mod wallet_client {
         pub async fn buy_storage(
             &mut self,
             request: impl tonic::IntoRequest<super::BuyStorageContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/BuyStorage",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/BuyStorage");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "BuyStorage"));
@@ -5048,22 +4470,13 @@ pub mod wallet_client {
         pub async fn buy_storage_bytes(
             &mut self,
             request: impl tonic::IntoRequest<super::BuyStorageBytesContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/BuyStorageBytes",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/BuyStorageBytes");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "BuyStorageBytes"));
@@ -5072,22 +4485,13 @@ pub mod wallet_client {
         pub async fn sell_storage(
             &mut self,
             request: impl tonic::IntoRequest<super::SellStorageContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/SellStorage",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/SellStorage");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "SellStorage"));
@@ -5096,22 +4500,13 @@ pub mod wallet_client {
         pub async fn exchange_create(
             &mut self,
             request: impl tonic::IntoRequest<super::ExchangeCreateContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ExchangeCreate",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ExchangeCreate");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ExchangeCreate"));
@@ -5120,22 +4515,13 @@ pub mod wallet_client {
         pub async fn exchange_inject(
             &mut self,
             request: impl tonic::IntoRequest<super::ExchangeInjectContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ExchangeInject",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ExchangeInject");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ExchangeInject"));
@@ -5144,22 +4530,13 @@ pub mod wallet_client {
         pub async fn exchange_withdraw(
             &mut self,
             request: impl tonic::IntoRequest<super::ExchangeWithdrawContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ExchangeWithdraw",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ExchangeWithdraw");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ExchangeWithdraw"));
@@ -5168,22 +4545,13 @@ pub mod wallet_client {
         pub async fn exchange_transaction(
             &mut self,
             request: impl tonic::IntoRequest<super::ExchangeTransactionContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ExchangeTransaction",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ExchangeTransaction");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ExchangeTransaction"));
@@ -5192,22 +4560,13 @@ pub mod wallet_client {
         pub async fn market_sell_asset(
             &mut self,
             request: impl tonic::IntoRequest<super::MarketSellAssetContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/MarketSellAsset",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/MarketSellAsset");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "MarketSellAsset"));
@@ -5216,22 +4575,13 @@ pub mod wallet_client {
         pub async fn market_cancel_order(
             &mut self,
             request: impl tonic::IntoRequest<super::MarketCancelOrderContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/MarketCancelOrder",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/MarketCancelOrder");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "MarketCancelOrder"));
@@ -5241,18 +4591,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::MarketOrder>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetMarketOrderById",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetMarketOrderById");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetMarketOrderById"));
@@ -5261,46 +4604,30 @@ pub mod wallet_client {
         pub async fn get_market_order_by_account(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::MarketOrderList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::MarketOrderList>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetMarketOrderByAccount",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetMarketOrderByAccount");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "GetMarketOrderByAccount"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetMarketOrderByAccount",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_market_price_by_pair(
             &mut self,
             request: impl tonic::IntoRequest<super::MarketOrderPair>,
-        ) -> std::result::Result<
-            tonic::Response<super::MarketPriceList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::MarketPriceList>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetMarketPriceByPair",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetMarketPriceByPair");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetMarketPriceByPair"));
@@ -5309,46 +4636,30 @@ pub mod wallet_client {
         pub async fn get_market_order_list_by_pair(
             &mut self,
             request: impl tonic::IntoRequest<super::MarketOrderPair>,
-        ) -> std::result::Result<
-            tonic::Response<super::MarketOrderList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::MarketOrderList>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetMarketOrderListByPair",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetMarketOrderListByPair");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "GetMarketOrderListByPair"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetMarketOrderListByPair",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_market_pair_list(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::MarketOrderPairList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::MarketOrderPairList>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetMarketPairList",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetMarketPairList");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetMarketPairList"));
@@ -5358,38 +4669,26 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::NodeList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ListNodes",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ListNodes");
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new("protocol.Wallet", "ListNodes"));
+            req.extensions_mut()
+                .insert(GrpcMethod::new("protocol.Wallet", "ListNodes"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_asset_issue_by_account(
             &mut self,
             request: impl tonic::IntoRequest<super::Account>,
         ) -> std::result::Result<tonic::Response<super::AssetIssueList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAssetIssueByAccount",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAssetIssueByAccount");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetAssetIssueByAccount"));
@@ -5398,22 +4697,12 @@ pub mod wallet_client {
         pub async fn get_account_net(
             &mut self,
             request: impl tonic::IntoRequest<super::Account>,
-        ) -> std::result::Result<
-            tonic::Response<super::AccountNetMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::AccountNetMessage>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAccountNet",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAccountNet");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetAccountNet"));
@@ -5422,22 +4711,13 @@ pub mod wallet_client {
         pub async fn get_account_resource(
             &mut self,
             request: impl tonic::IntoRequest<super::Account>,
-        ) -> std::result::Result<
-            tonic::Response<super::AccountResourceMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::AccountResourceMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAccountResource",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAccountResource");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetAccountResource"));
@@ -5446,22 +4726,13 @@ pub mod wallet_client {
         pub async fn get_asset_issue_by_name(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::AssetIssueContract>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::AssetIssueContract>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAssetIssueByName",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAssetIssueByName");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetAssetIssueByName"));
@@ -5471,42 +4742,29 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::AssetIssueList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAssetIssueListByName",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAssetIssueListByName");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "GetAssetIssueListByName"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetAssetIssueListByName",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_asset_issue_by_id(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::AssetIssueContract>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::AssetIssueContract>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAssetIssueById",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAssetIssueById");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetAssetIssueById"));
@@ -5517,18 +4775,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::Block>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetNowBlock",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetNowBlock");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetNowBlock"));
@@ -5539,18 +4790,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::BlockExtention>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetNowBlock2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetNowBlock2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetNowBlock2"));
@@ -5561,18 +4805,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
         ) -> std::result::Result<tonic::Response<super::Block>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBlockByNum",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBlockByNum");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBlockByNum"));
@@ -5583,18 +4820,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
         ) -> std::result::Result<tonic::Response<super::BlockExtention>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBlockByNum2",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBlockByNum2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBlockByNum2"));
@@ -5604,41 +4834,29 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/GetTransactionCountByBlockNum",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.Wallet", "GetTransactionCountByBlockNum"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetTransactionCountByBlockNum",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_block_by_id(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::Block>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBlockById",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBlockById");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBlockById"));
@@ -5649,18 +4867,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BlockLimit>,
         ) -> std::result::Result<tonic::Response<super::BlockList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBlockByLimitNext",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBlockByLimitNext");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBlockByLimitNext"));
@@ -5670,22 +4881,14 @@ pub mod wallet_client {
         pub async fn get_block_by_limit_next2(
             &mut self,
             request: impl tonic::IntoRequest<super::BlockLimit>,
-        ) -> std::result::Result<
-            tonic::Response<super::BlockListExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::BlockListExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBlockByLimitNext2",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBlockByLimitNext2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBlockByLimitNext2"));
@@ -5696,18 +4899,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
         ) -> std::result::Result<tonic::Response<super::BlockList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBlockByLatestNum",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBlockByLatestNum");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBlockByLatestNum"));
@@ -5717,22 +4913,14 @@ pub mod wallet_client {
         pub async fn get_block_by_latest_num2(
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::BlockListExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::BlockListExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBlockByLatestNum2",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBlockByLatestNum2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBlockByLatestNum2"));
@@ -5742,18 +4930,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetTransactionById",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetTransactionById");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetTransactionById"));
@@ -5762,22 +4943,13 @@ pub mod wallet_client {
         pub async fn deploy_contract(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateSmartContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/DeployContract",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/DeployContract");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "DeployContract"));
@@ -5787,18 +4959,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::SmartContract>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetContract",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetContract");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetContract"));
@@ -5807,22 +4972,13 @@ pub mod wallet_client {
         pub async fn get_contract_info(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::SmartContractDataWrapper>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::SmartContractDataWrapper>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetContractInfo",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetContractInfo");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetContractInfo"));
@@ -5831,22 +4987,13 @@ pub mod wallet_client {
         pub async fn trigger_contract(
             &mut self,
             request: impl tonic::IntoRequest<super::TriggerSmartContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/TriggerContract",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/TriggerContract");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "TriggerContract"));
@@ -5855,46 +5002,31 @@ pub mod wallet_client {
         pub async fn trigger_constant_contract(
             &mut self,
             request: impl tonic::IntoRequest<super::TriggerSmartContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/TriggerConstantContract",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/TriggerConstantContract");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "TriggerConstantContract"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "TriggerConstantContract",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn estimate_energy(
             &mut self,
             request: impl tonic::IntoRequest<super::TriggerSmartContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::EstimateEnergyMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::EstimateEnergyMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/EstimateEnergy",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/EstimateEnergy");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "EstimateEnergy"));
@@ -5903,22 +5035,13 @@ pub mod wallet_client {
         pub async fn clear_contract_abi(
             &mut self,
             request: impl tonic::IntoRequest<super::ClearAbiContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ClearContractABI",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ClearContractABI");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ClearContractABI"));
@@ -5928,18 +5051,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::WitnessList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ListWitnesses",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ListWitnesses");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ListWitnesses"));
@@ -5948,22 +5064,14 @@ pub mod wallet_client {
         pub async fn get_delegated_resource(
             &mut self,
             request: impl tonic::IntoRequest<super::DelegatedResourceMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::DelegatedResourceList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DelegatedResourceList>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetDelegatedResource",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetDelegatedResource");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetDelegatedResource"));
@@ -5972,22 +5080,14 @@ pub mod wallet_client {
         pub async fn get_delegated_resource_v2(
             &mut self,
             request: impl tonic::IntoRequest<super::DelegatedResourceMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::DelegatedResourceList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DelegatedResourceList>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetDelegatedResourceV2",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetDelegatedResourceV2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetDelegatedResourceV2"));
@@ -5996,59 +5096,39 @@ pub mod wallet_client {
         pub async fn get_delegated_resource_account_index(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::DelegatedResourceAccountIndex>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DelegatedResourceAccountIndex>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/GetDelegatedResourceAccountIndex",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.Wallet",
-                        "GetDelegatedResourceAccountIndex",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetDelegatedResourceAccountIndex",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_delegated_resource_account_index_v2(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::DelegatedResourceAccountIndex>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DelegatedResourceAccountIndex>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/GetDelegatedResourceAccountIndexV2",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.Wallet",
-                        "GetDelegatedResourceAccountIndexV2",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetDelegatedResourceAccountIndexV2",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_can_delegated_max_size(
@@ -6058,18 +5138,12 @@ pub mod wallet_client {
             tonic::Response<super::CanDelegatedMaxSizeResponseMessage>,
             tonic::Status,
         > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetCanDelegatedMaxSize",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetCanDelegatedMaxSize");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetCanDelegatedMaxSize"));
@@ -6077,74 +5151,54 @@ pub mod wallet_client {
         }
         pub async fn get_available_unfreeze_count(
             &mut self,
-            request: impl tonic::IntoRequest<
-                super::GetAvailableUnfreezeCountRequestMessage,
-            >,
+            request: impl tonic::IntoRequest<super::GetAvailableUnfreezeCountRequestMessage>,
         ) -> std::result::Result<
             tonic::Response<super::GetAvailableUnfreezeCountResponseMessage>,
             tonic::Status,
         > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAvailableUnfreezeCount",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAvailableUnfreezeCount");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "GetAvailableUnfreezeCount"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetAvailableUnfreezeCount",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_can_withdraw_unfreeze_amount(
             &mut self,
-            request: impl tonic::IntoRequest<
-                super::CanWithdrawUnfreezeAmountRequestMessage,
-            >,
+            request: impl tonic::IntoRequest<super::CanWithdrawUnfreezeAmountRequestMessage>,
         ) -> std::result::Result<
             tonic::Response<super::CanWithdrawUnfreezeAmountResponseMessage>,
             tonic::Status,
         > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/GetCanWithdrawUnfreezeAmount",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.Wallet", "GetCanWithdrawUnfreezeAmount"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetCanWithdrawUnfreezeAmount",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_proposals(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::ProposalList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ListProposals",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ListProposals");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ListProposals"));
@@ -6154,39 +5208,28 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::PaginatedMessage>,
         ) -> std::result::Result<tonic::Response<super::ProposalList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetPaginatedProposalList",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetPaginatedProposalList");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "GetPaginatedProposalList"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetPaginatedProposalList",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_proposal_by_id(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::Proposal>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetProposalById",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetProposalById");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetProposalById"));
@@ -6196,18 +5239,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::ExchangeList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ListExchanges",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ListExchanges");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ListExchanges"));
@@ -6217,39 +5253,28 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::PaginatedMessage>,
         ) -> std::result::Result<tonic::Response<super::ExchangeList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetPaginatedExchangeList",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetPaginatedExchangeList");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "GetPaginatedExchangeList"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetPaginatedExchangeList",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_exchange_by_id(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::Exchange>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetExchangeById",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetExchangeById");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetExchangeById"));
@@ -6258,22 +5283,12 @@ pub mod wallet_client {
         pub async fn get_chain_parameters(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::ChainParameters>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::ChainParameters>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetChainParameters",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetChainParameters");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetChainParameters"));
@@ -6283,18 +5298,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::AssetIssueList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAssetIssueList",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAssetIssueList");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetAssetIssueList"));
@@ -6304,41 +5312,28 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::PaginatedMessage>,
         ) -> std::result::Result<tonic::Response<super::AssetIssueList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetPaginatedAssetIssueList",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetPaginatedAssetIssueList");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.Wallet", "GetPaginatedAssetIssueList"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetPaginatedAssetIssueList",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn total_transaction(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/TotalTransaction",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/TotalTransaction");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "TotalTransaction"));
@@ -6348,18 +5343,12 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetNextMaintenanceTime",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetNextMaintenanceTime");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetNextMaintenanceTime"));
@@ -6368,22 +5357,13 @@ pub mod wallet_client {
         pub async fn get_transaction_info_by_id(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionInfo>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionInfo>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetTransactionInfoById",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetTransactionInfoById");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetTransactionInfoById"));
@@ -6392,93 +5372,66 @@ pub mod wallet_client {
         pub async fn account_permission_update(
             &mut self,
             request: impl tonic::IntoRequest<super::AccountPermissionUpdateContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/AccountPermissionUpdate",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/AccountPermissionUpdate");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "AccountPermissionUpdate"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "AccountPermissionUpdate",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_transaction_sign_weight(
             &mut self,
             request: impl tonic::IntoRequest<super::Transaction>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionSignWeight>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionSignWeight>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetTransactionSignWeight",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetTransactionSignWeight");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "GetTransactionSignWeight"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetTransactionSignWeight",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_transaction_approved_list(
             &mut self,
             request: impl tonic::IntoRequest<super::Transaction>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionApprovedList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionApprovedList>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetTransactionApprovedList",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetTransactionApprovedList");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.Wallet", "GetTransactionApprovedList"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetTransactionApprovedList",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_node_info(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::NodeInfo>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetNodeInfo",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetNodeInfo");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetNodeInfo"));
@@ -6488,18 +5441,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetRewardInfo",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetRewardInfo");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetRewardInfo"));
@@ -6509,18 +5455,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBrokerageInfo",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBrokerageInfo");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBrokerageInfo"));
@@ -6529,22 +5468,13 @@ pub mod wallet_client {
         pub async fn update_brokerage(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateBrokerageContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/UpdateBrokerage",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/UpdateBrokerage");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "UpdateBrokerage"));
@@ -6554,67 +5484,48 @@ pub mod wallet_client {
         pub async fn create_shielded_transaction(
             &mut self,
             request: impl tonic::IntoRequest<super::PrivateParameters>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateShieldedTransaction",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateShieldedTransaction");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "CreateShieldedTransaction"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "CreateShieldedTransaction",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_merkle_tree_voucher_info(
             &mut self,
             request: impl tonic::IntoRequest<super::OutputPointInfo>,
-        ) -> std::result::Result<
-            tonic::Response<super::IncrementalMerkleVoucherInfo>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::IncrementalMerkleVoucherInfo>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetMerkleTreeVoucherInfo",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetMerkleTreeVoucherInfo");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "GetMerkleTreeVoucherInfo"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetMerkleTreeVoucherInfo",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn scan_note_by_ivk(
             &mut self,
             request: impl tonic::IntoRequest<super::IvkDecryptParameters>,
         ) -> std::result::Result<tonic::Response<super::DecryptNotes>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ScanNoteByIvk",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ScanNoteByIvk");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ScanNoteByIvk"));
@@ -6623,22 +5534,14 @@ pub mod wallet_client {
         pub async fn scan_and_mark_note_by_ivk(
             &mut self,
             request: impl tonic::IntoRequest<super::IvkDecryptAndMarkParameters>,
-        ) -> std::result::Result<
-            tonic::Response<super::DecryptNotesMarked>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DecryptNotesMarked>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ScanAndMarkNoteByIvk",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/ScanAndMarkNoteByIvk");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ScanAndMarkNoteByIvk"));
@@ -6648,18 +5551,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::OvkDecryptParameters>,
         ) -> std::result::Result<tonic::Response<super::DecryptNotes>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/ScanNoteByOvk",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/ScanNoteByOvk");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "ScanNoteByOvk"));
@@ -6669,18 +5565,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::BytesMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetSpendingKey",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetSpendingKey");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetSpendingKey"));
@@ -6689,22 +5578,14 @@ pub mod wallet_client {
         pub async fn get_expanded_spending_key(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::ExpandedSpendingKeyMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::ExpandedSpendingKeyMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetExpandedSpendingKey",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetExpandedSpendingKey");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetExpandedSpendingKey"));
@@ -6714,18 +5595,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::BytesMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetAkFromAsk",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetAkFromAsk");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetAkFromAsk"));
@@ -6735,18 +5609,11 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::BytesMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetNkFromNsk",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetNkFromNsk");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetNkFromNsk"));
@@ -6755,22 +5622,14 @@ pub mod wallet_client {
         pub async fn get_incoming_viewing_key(
             &mut self,
             request: impl tonic::IntoRequest<super::ViewingKeyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::IncomingViewingKeyMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::IncomingViewingKeyMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetIncomingViewingKey",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetIncomingViewingKey");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetIncomingViewingKey"));
@@ -6779,22 +5638,13 @@ pub mod wallet_client {
         pub async fn get_diversifier(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::DiversifierMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DiversifierMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetDiversifier",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetDiversifier");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetDiversifier"));
@@ -6803,22 +5653,14 @@ pub mod wallet_client {
         pub async fn get_new_shielded_address(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::ShieldedAddressInfo>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::ShieldedAddressInfo>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetNewShieldedAddress",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetNewShieldedAddress");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetNewShieldedAddress"));
@@ -6827,22 +5669,14 @@ pub mod wallet_client {
         pub async fn get_zen_payment_address(
             &mut self,
             request: impl tonic::IntoRequest<super::IncomingViewingKeyDiversifierMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::PaymentAddressMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::PaymentAddressMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetZenPaymentAddress",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetZenPaymentAddress");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetZenPaymentAddress"));
@@ -6852,104 +5686,75 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::BytesMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetRcm");
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new("protocol.Wallet", "GetRcm"));
+            req.extensions_mut()
+                .insert(GrpcMethod::new("protocol.Wallet", "GetRcm"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn is_spend(
             &mut self,
             request: impl tonic::IntoRequest<super::NoteParameters>,
         ) -> std::result::Result<tonic::Response<super::SpendResult>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/IsSpend");
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new("protocol.Wallet", "IsSpend"));
+            req.extensions_mut()
+                .insert(GrpcMethod::new("protocol.Wallet", "IsSpend"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_shielded_transaction_without_spend_auth_sig(
             &mut self,
             request: impl tonic::IntoRequest<super::PrivateParametersWithoutAsk>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/CreateShieldedTransactionWithoutSpendAuthSig",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.Wallet",
-                        "CreateShieldedTransactionWithoutSpendAuthSig",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "CreateShieldedTransactionWithoutSpendAuthSig",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_shield_transaction_hash(
             &mut self,
             request: impl tonic::IntoRequest<super::Transaction>,
         ) -> std::result::Result<tonic::Response<super::BytesMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetShieldTransactionHash",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetShieldTransactionHash");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "GetShieldTransactionHash"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetShieldTransactionHash",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_spend_auth_sig(
             &mut self,
             request: impl tonic::IntoRequest<super::SpendAuthSigParameters>,
         ) -> std::result::Result<tonic::Response<super::BytesMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateSpendAuthSig",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateSpendAuthSig");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CreateSpendAuthSig"));
@@ -6959,18 +5764,12 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NfParameters>,
         ) -> std::result::Result<tonic::Response<super::BytesMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateShieldNullifier",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateShieldNullifier");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "CreateShieldNullifier"));
@@ -6980,238 +5779,159 @@ pub mod wallet_client {
         pub async fn create_shielded_contract_parameters(
             &mut self,
             request: impl tonic::IntoRequest<super::PrivateShieldedTrc20Parameters>,
-        ) -> std::result::Result<
-            tonic::Response<super::ShieldedTrc20Parameters>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::ShieldedTrc20Parameters>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/CreateShieldedContractParameters",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.Wallet",
-                        "CreateShieldedContractParameters",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "CreateShieldedContractParameters",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_shielded_contract_parameters_without_ask(
             &mut self,
-            request: impl tonic::IntoRequest<
-                super::PrivateShieldedTrc20ParametersWithoutAsk,
-            >,
-        ) -> std::result::Result<
-            tonic::Response<super::ShieldedTrc20Parameters>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            request: impl tonic::IntoRequest<super::PrivateShieldedTrc20ParametersWithoutAsk>,
+        ) -> std::result::Result<tonic::Response<super::ShieldedTrc20Parameters>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/CreateShieldedContractParametersWithoutAsk",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.Wallet",
-                        "CreateShieldedContractParametersWithoutAsk",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "CreateShieldedContractParametersWithoutAsk",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn scan_shielded_trc20_notes_by_ivk(
             &mut self,
             request: impl tonic::IntoRequest<super::IvkDecryptTrc20Parameters>,
-        ) -> std::result::Result<
-            tonic::Response<super::DecryptNotesTrc20>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DecryptNotesTrc20>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/ScanShieldedTRC20NotesByIvk",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.Wallet", "ScanShieldedTRC20NotesByIvk"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "ScanShieldedTRC20NotesByIvk",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn scan_shielded_trc20_notes_by_ovk(
             &mut self,
             request: impl tonic::IntoRequest<super::OvkDecryptTrc20Parameters>,
-        ) -> std::result::Result<
-            tonic::Response<super::DecryptNotesTrc20>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DecryptNotesTrc20>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/ScanShieldedTRC20NotesByOvk",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.Wallet", "ScanShieldedTRC20NotesByOvk"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "ScanShieldedTRC20NotesByOvk",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn is_shielded_trc20_contract_note_spent(
             &mut self,
             request: impl tonic::IntoRequest<super::NfTrc20Parameters>,
-        ) -> std::result::Result<
-            tonic::Response<super::NullifierResult>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::NullifierResult>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/IsShieldedTRC20ContractNoteSpent",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.Wallet",
-                        "IsShieldedTRC20ContractNoteSpent",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "IsShieldedTRC20ContractNoteSpent",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_trigger_input_for_shielded_trc20_contract(
             &mut self,
-            request: impl tonic::IntoRequest<
-                super::ShieldedTrc20TriggerContractParameters,
-            >,
+            request: impl tonic::IntoRequest<super::ShieldedTrc20TriggerContractParameters>,
         ) -> std::result::Result<tonic::Response<super::BytesMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/GetTriggerInputForShieldedTRC20Contract",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.Wallet",
-                        "GetTriggerInputForShieldedTRC20Contract",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetTriggerInputForShieldedTRC20Contract",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_common_transaction(
             &mut self,
             request: impl tonic::IntoRequest<super::Transaction>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/CreateCommonTransaction",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/CreateCommonTransaction");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "CreateCommonTransaction"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "CreateCommonTransaction",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_transaction_info_by_block_num(
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionInfoList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionInfoList>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/GetTransactionInfoByBlockNum",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.Wallet", "GetTransactionInfoByBlockNum"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetTransactionInfoByBlockNum",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_burn_trx(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBurnTrx",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBurnTrx");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBurnTrx"));
@@ -7221,65 +5941,46 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetTransactionFromPending",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Wallet/GetTransactionFromPending");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.Wallet", "GetTransactionFromPending"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetTransactionFromPending",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_transaction_list_from_pending(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionIdList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionIdList>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.Wallet/GetTransactionListFromPending",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.Wallet", "GetTransactionListFromPending"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.Wallet",
+                "GetTransactionListFromPending",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_pending_size(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetPendingSize",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetPendingSize");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetPendingSize"));
@@ -7289,39 +5990,26 @@ pub mod wallet_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BlockReq>,
         ) -> std::result::Result<tonic::Response<super::BlockExtention>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBlock");
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new("protocol.Wallet", "GetBlock"));
+            req.extensions_mut()
+                .insert(GrpcMethod::new("protocol.Wallet", "GetBlock"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_bandwidth_prices(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::PricesResponseMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::PricesResponseMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetBandwidthPrices",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetBandwidthPrices");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetBandwidthPrices"));
@@ -7330,22 +6018,13 @@ pub mod wallet_client {
         pub async fn get_energy_prices(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::PricesResponseMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::PricesResponseMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetEnergyPrices",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetEnergyPrices");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetEnergyPrices"));
@@ -7354,22 +6033,13 @@ pub mod wallet_client {
         pub async fn get_memo_fee(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::PricesResponseMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::PricesResponseMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Wallet/GetMemoFee",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Wallet/GetMemoFee");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Wallet", "GetMemoFee"));
@@ -7384,10 +6054,10 @@ pub mod wallet_solidity_client {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value,
+        clippy::let_unit_value
     )]
-    use tonic::codegen::*;
     use tonic::codegen::http::Uri;
+    use tonic::codegen::*;
     #[derive(Debug, Clone)]
     pub struct WalletSolidityClient<T> {
         inner: tonic::client::Grpc<T>,
@@ -7426,14 +6096,13 @@ pub mod wallet_solidity_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-                Response = http::Response<
-                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    http::Request<tonic::body::Body>,
+                    Response = http::Response<
+                        <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    >,
                 >,
-            >,
-            <T as tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
+            <T as tonic::codegen::Service<http::Request<tonic::body::Body>>>::Error:
+                Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             WalletSolidityClient::new(InterceptedService::new(inner, interceptor))
         }
@@ -7472,18 +6141,11 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::Account>,
         ) -> std::result::Result<tonic::Response<super::Account>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetAccount",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetAccount");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "GetAccount"));
@@ -7493,18 +6155,12 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::Account>,
         ) -> std::result::Result<tonic::Response<super::Account>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetAccountById",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetAccountById");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "GetAccountById"));
@@ -7514,18 +6170,12 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::WitnessList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/ListWitnesses",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/ListWitnesses");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "ListWitnesses"));
@@ -7535,120 +6185,90 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::AssetIssueList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetAssetIssueList",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetAssetIssueList");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.WalletSolidity", "GetAssetIssueList"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetAssetIssueList",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_paginated_asset_issue_list(
             &mut self,
             request: impl tonic::IntoRequest<super::PaginatedMessage>,
         ) -> std::result::Result<tonic::Response<super::AssetIssueList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetPaginatedAssetIssueList",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "GetPaginatedAssetIssueList",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetPaginatedAssetIssueList",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_asset_issue_by_name(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::AssetIssueContract>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::AssetIssueContract>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetAssetIssueByName",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetAssetIssueByName"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetAssetIssueByName",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_asset_issue_list_by_name(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::AssetIssueList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetAssetIssueListByName",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetAssetIssueListByName"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetAssetIssueListByName",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_asset_issue_by_id(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::AssetIssueContract>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::AssetIssueContract>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetAssetIssueById",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetAssetIssueById");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.WalletSolidity", "GetAssetIssueById"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetAssetIssueById",
+            ));
             self.inner.unary(req, path, codec).await
         }
         /// Please use GetNowBlock2 instead of this function.
@@ -7656,18 +6276,11 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::Block>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetNowBlock",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetNowBlock");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "GetNowBlock"));
@@ -7678,18 +6291,12 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::BlockExtention>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetNowBlock2",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetNowBlock2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "GetNowBlock2"));
@@ -7700,18 +6307,12 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
         ) -> std::result::Result<tonic::Response<super::Block>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetBlockByNum",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetBlockByNum");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "GetBlockByNum"));
@@ -7722,18 +6323,12 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
         ) -> std::result::Result<tonic::Response<super::BlockExtention>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetBlockByNum2",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetBlockByNum2");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "GetBlockByNum2"));
@@ -7743,136 +6338,94 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetTransactionCountByBlockNum",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "GetTransactionCountByBlockNum",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetTransactionCountByBlockNum",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_delegated_resource(
             &mut self,
             request: impl tonic::IntoRequest<super::DelegatedResourceMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::DelegatedResourceList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DelegatedResourceList>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetDelegatedResource",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetDelegatedResource"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetDelegatedResource",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_delegated_resource_v2(
             &mut self,
             request: impl tonic::IntoRequest<super::DelegatedResourceMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::DelegatedResourceList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DelegatedResourceList>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetDelegatedResourceV2",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetDelegatedResourceV2"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetDelegatedResourceV2",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_delegated_resource_account_index(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::DelegatedResourceAccountIndex>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DelegatedResourceAccountIndex>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetDelegatedResourceAccountIndex",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "GetDelegatedResourceAccountIndex",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetDelegatedResourceAccountIndex",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_delegated_resource_account_index_v2(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::DelegatedResourceAccountIndex>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DelegatedResourceAccountIndex>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetDelegatedResourceAccountIndexV2",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "GetDelegatedResourceAccountIndexV2",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetDelegatedResourceAccountIndexV2",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_can_delegated_max_size(
@@ -7882,124 +6435,89 @@ pub mod wallet_solidity_client {
             tonic::Response<super::CanDelegatedMaxSizeResponseMessage>,
             tonic::Status,
         > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetCanDelegatedMaxSize",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetCanDelegatedMaxSize"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetCanDelegatedMaxSize",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_available_unfreeze_count(
             &mut self,
-            request: impl tonic::IntoRequest<
-                super::GetAvailableUnfreezeCountRequestMessage,
-            >,
+            request: impl tonic::IntoRequest<super::GetAvailableUnfreezeCountRequestMessage>,
         ) -> std::result::Result<
             tonic::Response<super::GetAvailableUnfreezeCountResponseMessage>,
             tonic::Status,
         > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetAvailableUnfreezeCount",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "GetAvailableUnfreezeCount",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetAvailableUnfreezeCount",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_can_withdraw_unfreeze_amount(
             &mut self,
-            request: impl tonic::IntoRequest<
-                super::CanWithdrawUnfreezeAmountRequestMessage,
-            >,
+            request: impl tonic::IntoRequest<super::CanWithdrawUnfreezeAmountRequestMessage>,
         ) -> std::result::Result<
             tonic::Response<super::CanWithdrawUnfreezeAmountResponseMessage>,
             tonic::Status,
         > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetCanWithdrawUnfreezeAmount",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "GetCanWithdrawUnfreezeAmount",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetCanWithdrawUnfreezeAmount",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_exchange_by_id(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::Exchange>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetExchangeById",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetExchangeById");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.WalletSolidity", "GetExchangeById"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetExchangeById",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_exchanges(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::ExchangeList>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/ListExchanges",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/ListExchanges");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "ListExchanges"));
@@ -8009,96 +6527,66 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::Transaction>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetTransactionById",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetTransactionById");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetTransactionById"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetTransactionById",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_transaction_info_by_id(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionInfo>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionInfo>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetTransactionInfoById",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetTransactionInfoById"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetTransactionInfoById",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_merkle_tree_voucher_info(
             &mut self,
             request: impl tonic::IntoRequest<super::OutputPointInfo>,
-        ) -> std::result::Result<
-            tonic::Response<super::IncrementalMerkleVoucherInfo>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::IncrementalMerkleVoucherInfo>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetMerkleTreeVoucherInfo",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "GetMerkleTreeVoucherInfo",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetMerkleTreeVoucherInfo",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn scan_note_by_ivk(
             &mut self,
             request: impl tonic::IntoRequest<super::IvkDecryptParameters>,
         ) -> std::result::Result<tonic::Response<super::DecryptNotes>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/ScanNoteByIvk",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/ScanNoteByIvk");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "ScanNoteByIvk"));
@@ -8107,45 +6595,32 @@ pub mod wallet_solidity_client {
         pub async fn scan_and_mark_note_by_ivk(
             &mut self,
             request: impl tonic::IntoRequest<super::IvkDecryptAndMarkParameters>,
-        ) -> std::result::Result<
-            tonic::Response<super::DecryptNotesMarked>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DecryptNotesMarked>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/ScanAndMarkNoteByIvk",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "ScanAndMarkNoteByIvk"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "ScanAndMarkNoteByIvk",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn scan_note_by_ovk(
             &mut self,
             request: impl tonic::IntoRequest<super::OvkDecryptParameters>,
         ) -> std::result::Result<tonic::Response<super::DecryptNotes>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/ScanNoteByOvk",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/ScanNoteByOvk");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "ScanNoteByOvk"));
@@ -8155,18 +6630,11 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NoteParameters>,
         ) -> std::result::Result<tonic::Response<super::SpendResult>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/IsSpend",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/IsSpend");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "IsSpend"));
@@ -8175,106 +6643,67 @@ pub mod wallet_solidity_client {
         pub async fn scan_shielded_trc20_notes_by_ivk(
             &mut self,
             request: impl tonic::IntoRequest<super::IvkDecryptTrc20Parameters>,
-        ) -> std::result::Result<
-            tonic::Response<super::DecryptNotesTrc20>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DecryptNotesTrc20>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/ScanShieldedTRC20NotesByIvk",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "ScanShieldedTRC20NotesByIvk",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "ScanShieldedTRC20NotesByIvk",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn scan_shielded_trc20_notes_by_ovk(
             &mut self,
             request: impl tonic::IntoRequest<super::OvkDecryptTrc20Parameters>,
-        ) -> std::result::Result<
-            tonic::Response<super::DecryptNotesTrc20>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DecryptNotesTrc20>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/ScanShieldedTRC20NotesByOvk",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "ScanShieldedTRC20NotesByOvk",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "ScanShieldedTRC20NotesByOvk",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn is_shielded_trc20_contract_note_spent(
             &mut self,
             request: impl tonic::IntoRequest<super::NfTrc20Parameters>,
-        ) -> std::result::Result<
-            tonic::Response<super::NullifierResult>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::NullifierResult>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/IsShieldedTRC20ContractNoteSpent",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "IsShieldedTRC20ContractNoteSpent",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "IsShieldedTRC20ContractNoteSpent",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_reward_info(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetRewardInfo",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetRewardInfo");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "GetRewardInfo"));
@@ -8284,68 +6713,49 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetBrokerageInfo",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetBrokerageInfo");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.WalletSolidity", "GetBrokerageInfo"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetBrokerageInfo",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn trigger_constant_contract(
             &mut self,
             request: impl tonic::IntoRequest<super::TriggerSmartContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/TriggerConstantContract",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "TriggerConstantContract"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "TriggerConstantContract",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn estimate_energy(
             &mut self,
             request: impl tonic::IntoRequest<super::TriggerSmartContract>,
-        ) -> std::result::Result<
-            tonic::Response<super::EstimateEnergyMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::EstimateEnergyMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/EstimateEnergy",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/EstimateEnergy");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "EstimateEnergy"));
@@ -8354,176 +6764,120 @@ pub mod wallet_solidity_client {
         pub async fn get_transaction_info_by_block_num(
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionInfoList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionInfoList>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetTransactionInfoByBlockNum",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "GetTransactionInfoByBlockNum",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetTransactionInfoByBlockNum",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_market_order_by_id(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
         ) -> std::result::Result<tonic::Response<super::MarketOrder>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetMarketOrderById",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetMarketOrderById");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetMarketOrderById"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetMarketOrderById",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_market_order_by_account(
             &mut self,
             request: impl tonic::IntoRequest<super::BytesMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::MarketOrderList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::MarketOrderList>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetMarketOrderByAccount",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetMarketOrderByAccount"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetMarketOrderByAccount",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_market_price_by_pair(
             &mut self,
             request: impl tonic::IntoRequest<super::MarketOrderPair>,
-        ) -> std::result::Result<
-            tonic::Response<super::MarketPriceList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::MarketPriceList>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetMarketPriceByPair",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetMarketPriceByPair"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetMarketPriceByPair",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_market_order_list_by_pair(
             &mut self,
             request: impl tonic::IntoRequest<super::MarketOrderPair>,
-        ) -> std::result::Result<
-            tonic::Response<super::MarketOrderList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::MarketOrderList>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletSolidity/GetMarketOrderListByPair",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletSolidity",
-                        "GetMarketOrderListByPair",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetMarketOrderListByPair",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_market_pair_list(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::MarketOrderPairList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::MarketOrderPairList>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetMarketPairList",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetMarketPairList");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.WalletSolidity", "GetMarketPairList"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetMarketPairList",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_burn_trx(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::NumberMessage>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetBurnTrx",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetBurnTrx");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "GetBurnTrx"));
@@ -8533,18 +6887,11 @@ pub mod wallet_solidity_client {
             &mut self,
             request: impl tonic::IntoRequest<super::BlockReq>,
         ) -> std::result::Result<tonic::Response<super::BlockExtention>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetBlock",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetBlock");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.WalletSolidity", "GetBlock"));
@@ -8553,51 +6900,37 @@ pub mod wallet_solidity_client {
         pub async fn get_bandwidth_prices(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::PricesResponseMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::PricesResponseMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetBandwidthPrices",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetBandwidthPrices");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletSolidity", "GetBandwidthPrices"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetBandwidthPrices",
+            ));
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_energy_prices(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::PricesResponseMessage>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::PricesResponseMessage>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.WalletSolidity/GetEnergyPrices",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.WalletSolidity/GetEnergyPrices");
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("protocol.WalletSolidity", "GetEnergyPrices"));
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletSolidity",
+                "GetEnergyPrices",
+            ));
             self.inner.unary(req, path, codec).await
         }
     }
@@ -8609,10 +6942,10 @@ pub mod wallet_extension_client {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value,
+        clippy::let_unit_value
     )]
-    use tonic::codegen::*;
     use tonic::codegen::http::Uri;
+    use tonic::codegen::*;
     #[derive(Debug, Clone)]
     pub struct WalletExtensionClient<T> {
         inner: tonic::client::Grpc<T>,
@@ -8651,14 +6984,13 @@ pub mod wallet_extension_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-                Response = http::Response<
-                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    http::Request<tonic::body::Body>,
+                    Response = http::Response<
+                        <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    >,
                 >,
-            >,
-            <T as tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
+            <T as tonic::codegen::Service<http::Request<tonic::body::Body>>>::Error:
+                Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             WalletExtensionClient::new(InterceptedService::new(inner, interceptor))
         }
@@ -8697,114 +7029,78 @@ pub mod wallet_extension_client {
         pub async fn get_transactions_from_this(
             &mut self,
             request: impl tonic::IntoRequest<super::AccountPaginated>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionList>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletExtension/GetTransactionsFromThis",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletExtension",
-                        "GetTransactionsFromThis",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletExtension",
+                "GetTransactionsFromThis",
+            ));
             self.inner.unary(req, path, codec).await
         }
         /// Use this function instead of GetTransactionsFromThis.
         pub async fn get_transactions_from_this2(
             &mut self,
             request: impl tonic::IntoRequest<super::AccountPaginated>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionListExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionListExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletExtension/GetTransactionsFromThis2",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "protocol.WalletExtension",
-                        "GetTransactionsFromThis2",
-                    ),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletExtension",
+                "GetTransactionsFromThis2",
+            ));
             self.inner.unary(req, path, codec).await
         }
         /// Please use GetTransactionsToThis2 instead of this function.
         pub async fn get_transactions_to_this(
             &mut self,
             request: impl tonic::IntoRequest<super::AccountPaginated>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionList>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionList>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletExtension/GetTransactionsToThis",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletExtension", "GetTransactionsToThis"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletExtension",
+                "GetTransactionsToThis",
+            ));
             self.inner.unary(req, path, codec).await
         }
         /// Use this function instead of GetTransactionsToThis.
         pub async fn get_transactions_to_this2(
             &mut self,
             request: impl tonic::IntoRequest<super::AccountPaginated>,
-        ) -> std::result::Result<
-            tonic::Response<super::TransactionListExtention>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::TransactionListExtention>, tonic::Status>
+        {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/protocol.WalletExtension/GetTransactionsToThis2",
             );
             let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("protocol.WalletExtension", "GetTransactionsToThis2"),
-                );
+            req.extensions_mut().insert(GrpcMethod::new(
+                "protocol.WalletExtension",
+                "GetTransactionsToThis2",
+            ));
             self.inner.unary(req, path, codec).await
         }
     }
@@ -8816,10 +7112,10 @@ pub mod database_client {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value,
+        clippy::let_unit_value
     )]
-    use tonic::codegen::*;
     use tonic::codegen::http::Uri;
+    use tonic::codegen::*;
     /// the api of tron's db
     #[derive(Debug, Clone)]
     pub struct DatabaseClient<T> {
@@ -8859,14 +7155,13 @@ pub mod database_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-                Response = http::Response<
-                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    http::Request<tonic::body::Body>,
+                    Response = http::Response<
+                        <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    >,
                 >,
-            >,
-            <T as tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
+            <T as tonic::codegen::Service<http::Request<tonic::body::Body>>>::Error:
+                Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             DatabaseClient::new(InterceptedService::new(inner, interceptor))
         }
@@ -8906,18 +7201,11 @@ pub mod database_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::BlockReference>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Database/getBlockReference",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Database/getBlockReference");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Database", "getBlockReference"));
@@ -8926,22 +7214,13 @@ pub mod database_client {
         pub async fn get_dynamic_properties(
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
-        ) -> std::result::Result<
-            tonic::Response<super::DynamicProperties>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+        ) -> std::result::Result<tonic::Response<super::DynamicProperties>, tonic::Status> {
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Database/GetDynamicProperties",
-            );
+            let path =
+                http::uri::PathAndQuery::from_static("/protocol.Database/GetDynamicProperties");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Database", "GetDynamicProperties"));
@@ -8951,18 +7230,11 @@ pub mod database_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::Block>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Database/GetNowBlock",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Database/GetNowBlock");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Database", "GetNowBlock"));
@@ -8972,18 +7244,11 @@ pub mod database_client {
             &mut self,
             request: impl tonic::IntoRequest<super::NumberMessage>,
         ) -> std::result::Result<tonic::Response<super::Block>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Database/GetBlockByNum",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Database/GetBlockByNum");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Database", "GetBlockByNum"));
@@ -8998,10 +7263,10 @@ pub mod monitor_client {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value,
+        clippy::let_unit_value
     )]
-    use tonic::codegen::*;
     use tonic::codegen::http::Uri;
+    use tonic::codegen::*;
     #[derive(Debug, Clone)]
     pub struct MonitorClient<T> {
         inner: tonic::client::Grpc<T>,
@@ -9040,14 +7305,13 @@ pub mod monitor_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-                Response = http::Response<
-                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    http::Request<tonic::body::Body>,
+                    Response = http::Response<
+                        <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    >,
                 >,
-            >,
-            <T as tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
+            <T as tonic::codegen::Service<http::Request<tonic::body::Body>>>::Error:
+                Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             MonitorClient::new(InterceptedService::new(inner, interceptor))
         }
@@ -9086,18 +7350,11 @@ pub mod monitor_client {
             &mut self,
             request: impl tonic::IntoRequest<super::EmptyMessage>,
         ) -> std::result::Result<tonic::Response<super::MetricsInfo>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::unknown(
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
+            self.inner.ready().await.map_err(|e| {
+                tonic::Status::unknown(format!("Service was not ready: {}", e.into()))
+            })?;
             let codec = tonic_prost::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/protocol.Monitor/GetStatsInfo",
-            );
+            let path = http::uri::PathAndQuery::from_static("/protocol.Monitor/GetStatsInfo");
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("protocol.Monitor", "GetStatsInfo"));
@@ -9112,10 +7369,10 @@ pub mod network_client {
         dead_code,
         missing_docs,
         clippy::wildcard_imports,
-        clippy::let_unit_value,
+        clippy::let_unit_value
     )]
-    use tonic::codegen::*;
     use tonic::codegen::http::Uri;
+    use tonic::codegen::*;
     /// the api of tron's network such as node list.
     #[derive(Debug, Clone)]
     pub struct NetworkClient<T> {
@@ -9155,14 +7412,13 @@ pub mod network_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-                Response = http::Response<
-                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    http::Request<tonic::body::Body>,
+                    Response = http::Response<
+                        <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
+                    >,
                 >,
-            >,
-            <T as tonic::codegen::Service<
-                http::Request<tonic::body::Body>,
-            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
+            <T as tonic::codegen::Service<http::Request<tonic::body::Body>>>::Error:
+                Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             NetworkClient::new(InterceptedService::new(inner, interceptor))
         }
