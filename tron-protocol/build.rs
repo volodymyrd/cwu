@@ -22,7 +22,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 fn run() -> Result<(), Box<dyn std::error::Error>> {
     let root_dir = env::current_dir().unwrap();
-    let protocol = root_dir.join("src/protocol/protocol.rs");
+    let protocol = root_dir.join("src/protocol.rs");
     if protocol.exists() {
         return Ok(());
     }
@@ -54,7 +54,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
 
     // --- Compile protos ---
     tonic_prost_build::configure()
-        .out_dir(root_dir.join("src/protocol"))
+        .out_dir(root_dir.join("src"))
         .build_server(false)
         .file_descriptor_set_path(out_dir.join("tron_protocol_descriptor.bin"))
         .type_attribute(
@@ -118,7 +118,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
         )?;
 
     // --- Cleanup ---
-    let unused_file = root_dir.join("src/protocol/google.api.rs");
+    let unused_file = root_dir.join("src/google.api.rs");
     if unused_file.exists() {
         fs::remove_file(unused_file)?;
     }
